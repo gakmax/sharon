@@ -1,14 +1,14 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
-import './index.css'
-import 'antd/dist/reset.css'
+import React from "react";
+import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import { HashRouter as Router } from "react-router-dom";
+import App from "./App";
+import "./index.css";
+import "antd/dist/reset.css";
 
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <Router>
+    <App />
+  </Router>
+);

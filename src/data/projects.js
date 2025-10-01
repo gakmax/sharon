@@ -1,47 +1,39 @@
+import edu2025 from "../assets/program/edu_2025.png"
+import edu2026 from "../assets/program/edu_2026.png"
+import certi2025 from "../assets/program/certi_2025.png"
+import certi2026 from "../assets/program/certi_2026.png"
+
 export const projects = [
   {
-    id: "p47",
+    id: "2025_2",
     year: 2025,
-    title: "제47회 전국무용예술제",
-    date: "2025-03-30",
-    location: "양산문화예술회관공연장",
-    summary: "무용 신진 인재발굴 및 무용문화 발전 도모",
-    budget: 3340000
+    title: "전통문화예술 교육프로그램 개발",
+    image: edu2025,
+    target: "유아·청소년·청년",
+    duration: "2025년도 프로그램 개발",
   },
   {
-    id: "in1",
+    id: "2025_1",
     year: 2025,
-    title: "김죽엽의 25번째 전통춤판 '인연'",
-    date: "2025-11-02",
-    location: "한울림 소극장",
-    summary: "대구 전통무용 보존과 지역민 공연 기회 제공",
-    budget: 11000000
+    title: "전통문화예술 교육 인재육성",
+    image: certi2025,
+    target: "청소년·청년 지도자",
+    duration: "2025.10~2026.07",
   },
   {
-    id: "edu2025",
-    year: 2025,
-    title: "전통문화예술 교육프로그램 개발 및 인재육성 (2025-2026)",
-    date: "2025-09",
-    location: "대구 및 온라인",
-    summary: "유아·청소년·청년 대상 교육과정 개발 및 운영",
-    budget: 0
-  },
-  {
-    id: "p48",
+    id: "2026_2",
     year: 2026,
-    title: "제48회 전국무용 '한맥' 예술제",
-    date: "2026-03-29",
-    location: "대구 아양아트센터(예정)",
-    summary: "무용 신진 인재발굴 및 창작 콘텐츠 생산",
-    budget: 9900000
+    title: "전통문화예술 교육프로그램 개발 및 운영",
+    image: edu2026,
+    target: "유아·청소년·청년",
+    duration: "2026.09 예정",
   },
   {
-    id: "hanbok",
+    id: "2026_1",
     year: 2026,
-    title: "세계 한복 패션 페스티벌",
-    date: "2026-02",
-    location: "마닐라 메트로씨어트 외",
-    summary: "한복 세계화 및 K-문화 확산",
-    budget: 13000000
-  }
-]
+    title: "전통문화예술 지도사 자격증 과정",
+    image: certi2026,
+    target: "청소년·청년 지도자",
+    duration: "2026.07 예정",
+  },
+];

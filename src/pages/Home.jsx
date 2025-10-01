@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Button, Card } from 'antd'
-import { Link } from 'react-router-dom'
-import mainImg from '../assets/main.jpg';
-import art_troupe from '../assets/art_troupe.png';
-import business from '../assets/business.png';
-import study from '../assets/study.png';
-import Title from 'antd/es/typography/Title';
+import React, { useState } from "react";
+import { Button, Card } from "antd";
+import { Link } from "react-router-dom";
+import mainImg from "../assets/main.jpg";
+import art_troupe from "../assets/art_troupe.png";
+import business from "../assets/business.png";
+import study from "../assets/study.png";
+import Title from "antd/es/typography/Title";
 
 export default function Home() {
   const [hovered, setHovered] = useState(null);
@@ -13,47 +13,40 @@ export default function Home() {
   const cards = [
     {
       title: "예술단 소개",
-      content: "법인 소개, 임원명단, 조직 정보를 확인하세요.",
-      image: art_troupe
+      content: "예술단 소개, 임원명단, 조직 정보를 확인하세요.",
+      image: art_troupe,
     },
     {
       title: "주요사업",
       content: "2025 ~ 2026 주요사업 목록과 상세내용을 확인하세요.",
-      image: business
+      image: business,
     },
     {
       title: "교육프로그램",
-      content: "교육 프로그램과 자료를 다운로드하고 열람하세요.",
-      image: study
-    }
+      content: "교육 프로그램 목록과 상세내용을 확인하세요.",
+      image: study,
+    },
   ];
 
   return (
     <>
       {/* 메인 이미지 */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen mt-[-30px]">
+      <div className="relative w-full overflow-hidden">
         <img
           src={mainImg}
           alt="메인 이미지"
-          className="max-w-[1280px] w-full object-cover h-[350px] brightness-90 mx-auto"
+          className="w-full h-[350px] md:h-[450px] object-cover brightness-90 max-w-[1400px] mx-auto"
         />
-        {/* <div className="absolute inset-0 grid items-center justify-center">
-          <Title level={1} style={{color:"white"}} className="nanum-myeongjo-regular">
-            사단법인 무궁화예술단
+        <div className="absolute inset-0 grid items-center justify-center">
+          <Title
+            level={2}
+            style={{ color: "white", padding: "30px", textAlign: "center" }}
+            className="nanum-myeongjo-regular"
+          >
+            전통을 잇고, 미래를 여는 무궁화예술단
           </Title>
-        </div> */}
-      </div>
-
-      {/* 법인 목적 강조 섹션 */}
-      <section className="bg-gradient-to-r from-purple-50 via-pink-50 to-yellow-50 py-16">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <Link to="/about">
-            <Button type="primary" size="large" className="mt-6">
-              더 알아보기
-            </Button>
-          </Link>
         </div>
-      </section>
+      </div>
 
       {/* 카드 섹션 */}
       <section className="mt-12 max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-0 overflow-hidden">
@@ -67,7 +60,11 @@ export default function Home() {
               relative
               flex-1
               transition-all duration-300 ease-in-out
-              ${hovered === index ? "md:flex-[1.2] flex-[1] scale-x-100 z-10" : "flex-[1] scale-95"}
+              ${
+                hovered === index
+                  ? "md:flex-[1.2] flex-[1] scale-x-100 z-10"
+                  : "flex-[1] scale-95"
+              }
               shadow-lg
               text-center
               cursor-pointer
@@ -90,17 +87,21 @@ export default function Home() {
             </div>
 
             <div
-                className={`
+              className={`
                 absolute inset-0 text-white flex items-center justify-center p-4 mt-28
                 transition-opacity
-                ${hovered === index ? "duration-1000 opacity-100" : "duration-0 opacity-0"}
+                ${
+                  hovered === index
+                    ? "duration-1000 opacity-100"
+                    : "duration-0 opacity-0"
+                }
               `}
             >
-              <p className="text-sm md:text-base">{card.content}</p>
+              <p className="text-sm md:text-sm">{card.content}</p>
             </div>
           </div>
         ))}
       </section>
     </>
-  )
+  );
 }

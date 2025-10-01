@@ -2,11 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 /* small helpers */
-body { @apply bg-white text-gray-800; }
-.header-shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+body {
+  @apply bg-white text-gray-800;
+}
+.header-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
 .nanum-myeongjo-regular {
   font-family: "Nanum Myeongjo", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.ant-layout {
+  background: white;
+}
+
+.ant-table-content {
+  border: 1px solid #f0f0f0;
+}
+
+.section_address {
+  display: none;
 }
