@@ -20,6 +20,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Organization from "./pages/about/Organization";
 import Introduce from "./pages/about/Introduce";
 import Projects from "./pages/Projects";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 const { Content } = Layout;
 
@@ -32,6 +34,8 @@ export default function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
 
             <Route
               path="/about"

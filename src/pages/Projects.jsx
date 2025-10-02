@@ -28,9 +28,10 @@ export default function Projects() {
                   <Link to={"/projects/" + p.id}>
                     <div className="relative rounded-sm overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300">
                       <img
-                        src={p.image} // 이미지 필드
+                        src={p.image}
                         alt={p.title}
                         className="w-full h-56 object-cover"
+                        loading="lazy"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
                         <h4 className="text-white font-bold text-lg">

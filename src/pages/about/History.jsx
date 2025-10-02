@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout, Menu, Timeline } from "antd";
 import AboutLayout from "../../components/AboutLayout";
+import traditional from "../../assets/traditional.png";
 
 const { Sider, Content } = Layout;
 
@@ -53,17 +54,26 @@ export default function History() {
             className="py-6"
           />
 
-          <div className="p-6 bg-gray-50 rounded-lg border border-gray-200">
-            <h3 className="text-lg font-bold text-gray-800 mb-3">
-              30년이 넘는 역사와 전통
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              무궁화예술단은 1993년 창립 이래 한국 전통 예술의 계승과 발전을
-              위해 끊임없이 노력해왔습니다.
-              <br />
-              문화체육관광부의 허가를 받은 사단법인으로서, 우리 문화의 우수성을
-              국내외에 알리는 데 앞장서고 있습니다.
-            </p>
+          <div className="relative p-6 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-60"
+              style={{ backgroundImage: `url(${traditional})` }}
+            ></div>
+
+            <div className="absolute inset-0 bg-black/20"></div>
+
+            <div className="relative text-white">
+              <h3 className="text-xl font-bold mb-3">
+                30년이 넘는 역사와 전통
+              </h3>
+              <p className="leading-relaxed">
+                무궁화예술단은 1993년 창립 이래 한국 전통 예술의 계승과 발전을
+                위해 끊임없이 노력해왔습니다.
+                <br />
+                문화체육관광부의 허가를 받은 사단법인으로서, 우리 문화의
+                우수성을 국내외에 알리는 데 앞장서고 있습니다.
+              </p>
+            </div>
           </div>
         </Content>
       </Layout>

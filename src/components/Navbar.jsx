@@ -4,6 +4,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 
 import nts from "../assets/nts.png";
+import logo from "../assets/logo.png";
 
 const { Header } = Layout;
 const { Title } = Typography;
@@ -34,11 +35,15 @@ export default function Navbar() {
     { key: "/", label: <Link to="/">홈</Link> },
     {
       key: "/about",
-      label: "예술단 소개",
+      label: <Link to="/about/greeting">예술단 소개</Link>,
       children: [
         {
           key: "/about/greeting",
           label: <Link to="/about/greeting">인사말</Link>,
+        },
+        {
+          key: "/about/introduce",
+          label: <Link to="/about/introduce">예술단 소개</Link>,
         },
         {
           key: "/about/organization",
@@ -70,14 +75,22 @@ export default function Navbar() {
         boxShadow: "rgb(113 113 113) 0px 0px 4px 1px",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", marginRight: 24 }}>
-        <Title
-          level={4}
-          style={{ color: "black", margin: 0, minWidth: "200px" }}
-          className="nanum-myeongjo-regular"
-        >
-          사단법인 무궁화예술단
-        </Title>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginRight: 16,
+          flexShrink: 0,
+        }}
+      >
+        <img
+          src={logo}
+          alt="logo"
+          style={{ height: "40px", maxHeight: "10vh", width: "auto" }}
+          className="cursor-pointer"
+          onClick={() => (window.location.href = "/")}
+          loading="lazy"
+        />
       </div>
 
       <div style={{ flex: 1 }}>
@@ -111,8 +124,9 @@ export default function Navbar() {
         <img
           src={nts}
           alt="NTS"
-          className="cursor-pointer min-w-[70px] w-full"
+          className="cursor-pointer w-full max-w-[70px] aspect-square nts-logo"
           onClick={() => window.open("https://www.nts.go.kr", "_blank")}
+          loading="lazy"
         />
         {isMobile && (
           <>
@@ -128,18 +142,22 @@ export default function Navbar() {
               open={visible}
             >
               <Menu
-                mode="vertical"
+                mode="inline"
                 selectedKeys={[location.pathname]}
-                onClick={() => setVisible(false)}
+                style={{ borderInlineEnd: "none" }}
               >
                 {menuItems.map((item) => {
                   if (item.children) {
                     return (
-                      <SubMenu key={item.key} title={item.label}>
+                      <Menu.SubMenu
+                        key={item.key}
+                        title={item.label}
+                        triggerSubMenuAction="click"
+                      >
                         {item.children.map((sub) => (
                           <Menu.Item key={sub.key}>{sub.label}</Menu.Item>
                         ))}
-                      </SubMenu>
+                      </Menu.SubMenu>
                     );
                   }
                   return <Menu.Item key={item.key}>{item.label}</Menu.Item>;

@@ -2,6 +2,9 @@ import React from "react";
 import { Layout } from "antd";
 import AboutLayout from "../../components/AboutLayout";
 
+import taegeukgi from "../../assets/taegeukgi.png";
+import purpose from "../../assets/purpose.png";
+
 const { Content } = Layout;
 
 export default function Introduce() {
@@ -10,24 +13,31 @@ export default function Introduce() {
       <h2 className="text-2xl font-bold">예술단 소개</h2>
       <Layout className="min-h-screen bg-gray-50">
         <Content className="mx-auto space-y-16">
-          {/* 목적 섹션 */}
-          <section className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-10 shadow-lg transform hover:-translate-y-1 transition-all duration-500">
-            <h2 className="text-2xl md:text-2xl font-bold text-gray-800 mb-6 flex items-center">
-              <span className="w-1 h-7 bg-blue-600 mr-4 rounded"></span>
-              설립 목적
-            </h2>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              본 법인은{" "}
-              <span className="font-semibold text-blue-700">
-                예술문화의 발전과 선양
-              </span>
-              을 위하여 노력하는 자질있는 인재를 발굴하고, 후진양성과 국내·외
-              예술문화 진흥을 위하여 최선의 노력을 경주하여 활동함을 목적으로
-              합니다.
-            </p>
+          <section className="relative rounded-lg p-10 shadow-lg transform overflow-hidden">
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-100"
+              style={{ backgroundImage: `url(${purpose})` }}
+            ></div>
+
+            <div className="absolute inset-0 bg-gradient-to-r from-white to-indigo-50/70"></div>
+
+            <div className="relative">
+              <h2 className="text-2xl md:text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <span className="w-1 h-7 bg-blue-600 mr-4 rounded"></span>
+                설립 목적
+              </h2>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                본 법인은{" "}
+                <span className="font-semibold text-blue-700">
+                  예술문화의 발전과 선양
+                </span>
+                을 위하여 노력하는 자질있는 인재를 발굴하고, 후진양성과 국내·외
+                예술문화 진흥을 위하여 최선의 노력을 경주하여 활동함을 목적으로
+                합니다.
+              </p>
+            </div>
           </section>
 
-          {/* 비전 섹션 */}
           <section className="bg-white rounded-2xl p-10 shadow-lg">
             <h2 className="text-2xl md:text-2xl font-bold text-gray-800 mb-8 flex items-center">
               <span className="w-1 h-7 bg-blue-600 mr-4 rounded"></span>
@@ -117,12 +127,16 @@ export default function Introduce() {
             </div>
           </section>
 
-          <section className="relative mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-10 text-white text-center overflow-hidden">
-            <div className="absolute inset-0 opacity-20 bg-[url('/images/music-bg.svg')] bg-no-repeat bg-center bg-cover"></div>
+          <section className="relative mt-12 bg-gradient-to-r from-blue-600 to-red-300 rounded-xl p-10 text-white text-center overflow-hidden">
+            <div
+              className="absolute inset-0 opacity-20 bg-no-repeat bg-center bg-cover"
+              style={{ backgroundImage: `url(${taegeukgi})` }}
+            ></div>
+
             <p className="relative text-xl md:text-xl font-semibold leading-relaxed">
-              우리는 예술문화의 미래를 만들어가는
+              예술문화의 미래를 만들어가는
               <br />
-              <span className="font-extrabold text-2xl md:text-4xl">
+              <span className="font-extrabold text-xl md:text-2xl mt-4">
                 든든한 동반자
               </span>
               가 되겠습니다.

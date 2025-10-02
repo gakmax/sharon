@@ -38,9 +38,9 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image403} className="mx-auto" />
-        <img src={image401} className="mx-auto" />
-        <img src={image402} className="mx-auto" />
+        <img src={image403} className="mx-auto" loading="lazy" />
+        <img src={image401} className="mx-auto" loading="lazy" />
+        <img src={image402} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -56,8 +56,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image411} className="mx-auto" />
-        <img src={image412} className="mx-auto" />
+        <img src={image411} className="mx-auto" loading="lazy" />
+        <img src={image412} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -73,10 +73,10 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image421} className="mx-auto" />
-        <img src={image422} className="mx-auto" />
-        <img src={image423} className="mx-auto" />
-        <img src={image424} className="mx-auto" />
+        <img src={image421} className="mx-auto" loading="lazy" />
+        <img src={image422} className="mx-auto" loading="lazy" />
+        <img src={image423} className="mx-auto" loading="lazy" />
+        <img src={image424} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -92,8 +92,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image431} className="mx-auto" />
-        <img src={image432} className="mx-auto" />
+        <img src={image431} className="mx-auto" loading="lazy" />
+        <img src={image432} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -109,8 +109,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image441} className="mx-auto" />
-        <img src={image442} className="mx-auto" />
+        <img src={image441} className="mx-auto" loading="lazy" />
+        <img src={image442} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -126,9 +126,9 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image451} className="mx-auto" />
-        <img src={image452} className="mx-auto" />
-        <img src={image453} className="mx-auto" />
+        <img src={image451} className="mx-auto" loading="lazy" />
+        <img src={image452} className="mx-auto" loading="lazy" />
+        <img src={image453} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -144,8 +144,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image471} className="mx-auto" />
-        <img src={image472} className="mx-auto" />
+        <img src={image471} className="mx-auto" loading="lazy" />
+        <img src={image472} className="mx-auto" loading="lazy" />
       </>
     ),
   },

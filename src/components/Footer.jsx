@@ -1,16 +1,48 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import ntsbig from "../assets/nts_big.png";
+import logodark from "../assets/logo_dark.png";
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-200 py-8 mt-12">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-center md:text-left space-y-1">
-          <p>📞 사무국 : 이사장, 사무국장, 사무간사 (010-3877-4351)</p>
-          <p>📍 소재지 : 대구시 남구 명덕로34길 7, 2층</p>
+        <div className="text-center md:text-left space-y-1 text-gray-300">
+          <img
+            src={logodark}
+            alt="logo"
+            style={{ height: "40px", maxHeight: "10vh", width: "auto" }}
+            className="cursor-pointer "
+            onClick={() => (window.location.href = "/")}
+            loading="lazy"
+          />
+          <img
+            src={ntsbig}
+            alt="NTS"
+            className="cursor-pointer w-full max-w-[160px]  nts-logo-mobile hidden justify-self-center"
+            onClick={() => window.open("https://www.nts.go.kr", "_blank")}
+            loading="lazy"
+          />
+          <p className="flex items-center gap-2 mb-0 mt-6">
+            <span>대표: 김태연 |</span>
+            <span>대표번호: 053-656-8966</span>
+          </p>
+          <p className="flex items-center gap-2"></p>
+          {/* <p className="flex items-center gap-2">
+            <span>소재지: 대구시 남구 명덕로34길 7, 2층</span>
+          </p> */}
+          <p className="flex items-center gap-2">
+            <span>사업자 번호: 621-82-11085</span>
+          </p>
         </div>
-
-        {/* 우측 저작권 */}
-        <div className="text-center md:text-right text-sm space-y-1">
+        <div className="text-center md:text-right text-sm space-y-1 md:mt-[40px]">
+          <div className="flex justify-center md:justify-end gap-4 text-gray-400">
+            <Link to="/terms" className="hover:text-gray-200">
+              이용약관
+            </Link>
+            <Link to="/privacy" className="hover:text-gray-200">
+              개인정보처리방침
+            </Link>
+          </div>
           <p>Copyright ⓒ 2025 사단법인 무궁화예술단 All rights reserved.</p>
         </div>
       </div>
