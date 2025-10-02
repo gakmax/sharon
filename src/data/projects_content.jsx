@@ -244,6 +244,8 @@ export const projectsContent = [
           <div className="mt-3 ml-4">
             <p className="font-semibold mb-2">세부 프로그램</p>
             <ul className="list-disc list-inside space-y-1 text-gray-700">
+              <li>전통문화예술 지도사 자격증 과정</li>
+              <li>한국춤 명상댄스 지도사 자격증 과정</li>
               <li>유아ㆍ청소년 대상 : 국악기초, 전통예절ㆍ다도체험</li>
               <li>
                 청년ㆍ성인 대상 : 국악ㆍ판소리ㆍ민속무용, 도지ㆍ한지ㆍ공예 심화
