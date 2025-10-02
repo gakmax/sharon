@@ -22,6 +22,7 @@ import Introduce from "./pages/about/Introduce";
 import Projects from "./pages/Projects";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import NotFound from "./components/NotFound";
 
 const { Content } = Layout;
 
@@ -157,6 +158,7 @@ export default function App() {
                 </TopImages>
               }
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </Content>
