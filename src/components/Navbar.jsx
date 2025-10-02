@@ -145,6 +145,7 @@ export default function Navbar() {
                 mode="inline"
                 selectedKeys={[location.pathname]}
                 style={{ borderInlineEnd: "none" }}
+                onClick={() => setVisible(false)}
               >
                 {menuItems.map((item) => {
                   if (item.children) {

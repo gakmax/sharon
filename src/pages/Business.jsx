@@ -26,7 +26,7 @@ export default function Business() {
               {businessByYear[year].map((p) => (
                 <Col xs={24} sm={12} md={8} key={p.id}>
                   <Link to={"/business/" + p.id}>
-                    <div className="relative rounded-sm overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300">
+                    <div className="relative rounded-sm overflow-hidden shadow-lg hover:shadow-slate-500 hover:-translate-y-1 transform transition-all duration-300">
                       <img
                         src={p.image}
                         alt={p.title}
