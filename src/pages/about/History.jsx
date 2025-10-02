@@ -33,7 +33,7 @@ const historyData = [
   },
   {
     year: "2025년 7월",
-    content: "법인 제2대 이사장 김태연 취임",
+    content: "법인 제2대 이사장 김죽엽(김태연) 취임",
     color: "grey",
   },
 ];

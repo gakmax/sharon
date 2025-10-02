@@ -27,13 +27,13 @@ body {
   display: none;
 }
 
-@media (max-width: 340px) {
+@media (max-width: 500px) {
   .nts-logo {
     display: none !important;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 500px) {
   .nts-logo-mobile {
     display: block !important;
   }

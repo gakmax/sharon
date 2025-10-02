@@ -4,6 +4,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 
 import nts from "../assets/nts.png";
+import mcst from "../assets/mcst.png";
 import logo from "../assets/logo.png";
 
 const { Header } = Layout;
@@ -32,35 +33,35 @@ export default function Navbar() {
   };
 
   const menuItems = [
-    { key: "/", label: <Link to="/">홈</Link> },
+    { key: "/", label: <Link className="text-[16px]" to="/">홈</Link> },
     {
       key: "/about",
-      label: <Link to="/about/greeting">예술단 소개</Link>,
+      label: <Link className="text-[16px]" to="/about/greeting" >예술단 소개</Link>,
       children: [
         {
           key: "/about/greeting",
-          label: <Link to="/about/greeting">인사말</Link>,
+          label: <Link className="text-[16px]" to="/about/greeting">인사말</Link>,
         },
         {
           key: "/about/introduce",
-          label: <Link to="/about/introduce">예술단 소개</Link>,
+          label: <Link className="text-[16px]" to="/about/introduce">예술단 소개</Link>,
         },
         {
           key: "/about/organization",
-          label: <Link to="/about/organization">조직도</Link>,
+          label: <Link className="text-[16px]" to="/about/organization">조직도</Link>,
         },
-        { key: "/about/history", label: <Link to="/about/history">연혁</Link> },
+        { key: "/about/history", label: <Link className="text-[16px]" to="/about/history">연혁</Link> },
         {
           key: "/about/location",
-          label: <Link to="/about/location">오시는길</Link>,
+          label: <Link className="text-[16px]" to="/about/location">오시는길</Link>,
         },
       ],
     },
-    { key: "/business", label: <Link to="/business">주요사업</Link> },
-    { key: "/projects", label: <Link to="/projects">교육프로그램</Link> },
-    // { key: "/resources", label: <Link to="/resources">자료실</Link> },
-    { key: "/notices", label: <Link to="/notices">공지사항</Link> },
-    // { key: "/contact", label: <Link to="/contact">문의하기</Link> },
+    { key: "/business", label: <Link className="text-[16px]" to="/business">주요사업</Link> },
+    { key: "/projects", label: <Link className="text-[16px]" to="/projects">교육프로그램</Link> },
+    // { key: "/resources", label: <Link className="text-[16px]" to="/resources">자료실</Link> },
+    { key: "/notices", label: <Link className="text-[16px]" to="/notices">공지사항</Link> },
+    // { key: "/contact", label: <Link className="text-[16px]" to="/contact">문의하기</Link> },
   ];
 
   return (
@@ -75,23 +76,21 @@ export default function Navbar() {
         boxShadow: "rgb(113 113 113) 0px 0px 4px 1px",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          marginRight: 16,
-          flexShrink: 0,
-        }}
-      >
-        <img
-          src={logo}
-          alt="logo"
-          style={{ height: "40px", maxHeight: "10vh", width: "auto" }}
-          className="cursor-pointer"
-          onClick={() => (window.location.href = "/")}
-          loading="lazy"
-        />
-      </div>
+<div className="flex items-center mr-4 shrink-0">
+  <img
+    src={logo}
+    alt="logo"
+    className="
+      cursor-pointer
+      h-8 md:h-10 lg:h-12   /* 화면 크기에 따라 높이 변경 */
+      w-auto
+      max-h-[10vh]         /* 세로 길이가 화면 높이의 10% 넘지 않게 */
+    "
+    onClick={() => (window.location.href = "/")}
+    loading="lazy"
+  />
+</div>
+
 
       <div style={{ flex: 1 }}>
         {!isMobile && (
@@ -120,12 +119,19 @@ export default function Navbar() {
         )}
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <img
           src={nts}
           alt="NTS"
           className="cursor-pointer w-full max-w-[70px] aspect-square nts-logo"
           onClick={() => window.open("https://www.nts.go.kr", "_blank")}
+          loading="lazy"
+        />
+        <img
+          src={mcst}
+          alt="MCST"
+          className="cursor-pointer w-full max-w-[90px] aspect-square nts-logo"
+          onClick={() => window.open("https://www.mcst.go.kr", "_blank")}
           loading="lazy"
         />
         {isMobile && (

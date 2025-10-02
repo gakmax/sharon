@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 import AboutLayout from "../../components/AboutLayout";
-import profile from "../../assets/group.png";
+import profile from "../../assets/profile.png";
 
 const { Content } = Layout;
 
@@ -17,7 +17,7 @@ export default function Greeting() {
               <div className="relative rounded-xl overflow-hidden shadow-lg">
                 <img
                   src={profile}
-                  alt="이사장 김태연"
+                  alt="이사장 김죽엽(김태연)"
                   className="w-full h-full object-cover aspect-square"
                 />
               </div>

@@ -2,12 +2,15 @@ import React from "react";
 import { Card, Layout, Menu, Table, Timeline } from "antd";
 import AboutLayout from "../../components/AboutLayout";
 import organization from "../../assets/organization.png";
+import mcstbig from "../../assets/mcst_big.webp";
+
+
 
 const { Sider, Content } = Layout;
 
 export default function Organization() {
   const members = [
-    { position: "이사장/대표이사", name: "김태연", rank: "이사장" },
+    { position: "이사장/대표이사", name: "김죽엽(김태연)", rank: "이사장" },
     { position: "이사", name: "김세화", rank: "이사" },
     { position: "이사", name: "김경옥" },
     { position: "이사", name: "박비송" },
@@ -37,11 +40,24 @@ export default function Organization() {
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
                 <span className="w-3 h-3 bg-gray-400 inline-block rounded-full"></span>
+                소속기관
+              </h4>
+              <img
+                src={mcstbig}
+                alt="organization"
+                className="cursor-pointer sm:w-full md:w-8/12 lg:w-6/12 justify-self-center mb-12"
+                loading="lazy"
+                onClick={() => window.open("https://www.mcst.go.kr", "_blank")}
+              />
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                <span className="w-3 h-3 bg-gray-400 inline-block rounded-full"></span>
                 조직도
               </h4>
               <img
                 src={organization}
-                alt="NTS"
+                alt="organization"
                 className="cursor-pointer sm:w-full md:w-10/12 lg:w-8/12 justify-self-center mb-12"
                 loading="lazy"
               />
@@ -56,7 +72,7 @@ export default function Organization() {
                     이사장 / 대표이사
                   </span>
                   <span className="block font-semibold text-gray-800">
-                    김태연
+                    김죽엽(김태연)
                   </span>
                 </div>
                 {[
@@ -101,7 +117,7 @@ export default function Organization() {
                 사무국
               </h4>
               <div className="ml-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {["이사장: 김태연", "사무국장: 홍길동", "사무간사: 김민수"].map(
+                {["이사장: 김죽엽(김태연)", "사무국장: 홍길동", "사무간사: 김민수"].map(
                   (role) => (
                     <div
                       key={role}

@@ -52,7 +52,7 @@ export default function Privacy() {
           같이 개인정보 보호책임자를 지정합니다.
         </p>
         <ul className="list-disc list-inside space-y-1">
-          <li>성명: 김태연</li>
+          <li>성명: 김죽엽(김태연)</li>
           <li>소속/직책: 대표</li>
           <li>연락처: kiyart1019@naver.com</li>
         </ul>

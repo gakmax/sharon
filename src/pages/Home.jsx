@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Button, Card, Carousel, List } from "antd";
 import { Link } from "react-router-dom";
-import mainImg from "../assets/main.jpg";
+// import mainImg from "../assets/main.jpg";
+import mainImg from "../assets/mainhome.jpg";
 import art_troupe from "../assets/art_troupe.png";
 import business from "../assets/business.png";
 import study from "../assets/study.png";
 import Title from "antd/es/typography/Title";
-import slider1 from "../assets/study.png";
-import slider2 from "../assets/study.png";
-import slider3 from "../assets/study.png";
+import slider1 from "../assets/carousel1.jpg";
+import slider2 from "../assets/carousel2.jpg";
+import slider3 from "../assets/carousel3.jpg";
 
 export default function Home() {
   const [hovered, setHovered] = useState(null);
@@ -93,7 +94,7 @@ export default function Home() {
         <img
           src={mainImg}
           alt="메인 이미지"
-          className="w-full h-[350px] md:h-[450px] object-cover brightness-90 max-w-[1400px] mx-auto"
+          className="w-full h-[350px] md:h-[450px] object-cover brightness-90 max-w-[1400px] mx-auto object-top"
           loading="lazy"
         />
         <div className="absolute inset-0 grid items-center justify-center">
