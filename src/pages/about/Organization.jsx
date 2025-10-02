@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Layout, Menu, Table, Timeline } from "antd";
 import AboutLayout from "../../components/AboutLayout";
+import organization from "../../assets/organization.png";
 
 const { Sider, Content } = Layout;
 
@@ -34,6 +35,17 @@ export default function Organization() {
               </p>
             </div>
             <div>
+              <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                <span className="w-3 h-3 bg-gray-400 inline-block rounded-full"></span>
+                조직도
+              </h4>
+              <img
+                src={organization}
+                alt="NTS"
+                className="cursor-pointer sm:w-full md:w-10/12 lg:w-8/12 justify-self-center mb-12"
+                loading="lazy"
+              />
+
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
                 <span className="w-3 h-3 bg-blue-400 inline-block rounded-full"></span>
                 이사회
