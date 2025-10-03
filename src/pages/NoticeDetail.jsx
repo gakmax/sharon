@@ -22,7 +22,7 @@ export default function NoticeDetail() {
   return (
     <div className="">
       <h1 className="text-2xl font-bold mb-4">공지사항</h1>
-      <Card className="p-2">
+      <Card>
         <h2 className="text-2xl font-bold mb-2">{n.title}</h2>
         <p className="text-sm text-gray-500 mb-4">{n.date}</p>
         <div className="mb-6">{n.content}</div>

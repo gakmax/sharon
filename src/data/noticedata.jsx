@@ -22,6 +22,9 @@ import image451 from "../assets/notice/45-1.png";
 import image452 from "../assets/notice/45-2.png";
 import image453 from "../assets/notice/45-3.png";
 
+import image461 from "../assets/notice/46-1.jpg";
+import image462 from "../assets/notice/46-2.jpg";
+
 import image471 from "../assets/notice/47-1.jpg";
 import image472 from "../assets/notice/47-2.jpg";
 
@@ -132,8 +135,25 @@ export const notices = [
       </>
     ),
   },
-  {
+    {
     id: "7",
+    title: "제46회 전국무용예술제 안내",
+    notice_date: "2024-02-31",
+    date: (
+      <div className="flex border-b-[1px] mb-4 pb-4">
+        <div className="text-gray-400 mr-1">관리자 | </div>
+        <div className="text-gray-400">2024-02-31</div>
+      </div>
+    ),
+    content: (
+      <>
+        <img src={image461} className="mx-auto" loading="lazy" />
+        <img src={image462} className="mx-auto" loading="lazy" />
+      </>
+    ),
+  },
+  {
+    id: "8",
     title: "제47회 전국무용예술제 안내",
     notice_date: "2025-03-03",
     date: (

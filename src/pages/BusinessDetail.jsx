@@ -26,7 +26,7 @@ export default function BusinessDetail() {
   return (
     <div className="">
       <h1 className="text-2xl font-bold mb-4">주요 사업</h1>
-      <Card className="p-4">
+      <Card>
         <h2 className="text-2xl font-bold mb-2">{p.title}</h2>
         <div className="space-y-0 text-gray-700 border-b-[1px] mb-4 pb-4">
           <p className="mb-0">
