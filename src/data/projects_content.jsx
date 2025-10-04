@@ -76,7 +76,6 @@ export const projectsContent = [
           <h3 className="text-lg font-bold mb-2">라. 향후계획</h3>
           <p className="text-gray-700">교육 프로그램의 지속적 개발 및 운영</p>
         </section>
-
       </div>
     ),
   },
@@ -145,7 +144,7 @@ export const projectsContent = [
               2026.03~08 : 교수과정 연수, 이론·실기 시험문제안 작성 등 전문가
               양성 준비
             </li>
-            <li>2026.07 : 이론·실기시험 실시 및 자격증 발급 추진</li>
+            <li>2026.09 : 이론·실기시험 실시 및 자격증 발급 추진</li>
           </ul>
 
           <p className="mt-2 text-gray-700">
@@ -307,7 +306,8 @@ export const projectsContent = [
         {/* ② 전통문화예술 지도사 자격증 등록 발급 */}
         <section>
           <h2 className="text-2xl font-bold mb-6">
-            ② 전통문화예술 지도사ㆍ한국춤 명상댄스 지도사 자격증 등록 발급 우수인재 양성
+            ② 전통문화예술 지도사ㆍ한국춤 명상댄스 지도사 자격증 등록 발급
+            우수인재 양성
           </h2>
 
           {/* 가. 세부내용 */}
@@ -344,7 +344,10 @@ export const projectsContent = [
                 2026. 9월 : 이론 및 실기시험을 통해 전문가 양성 및 자격증 발급
                 추진
                 <ul className="list-disc list-inside ml-6 text-gray-700">
-                  <li>교육대상 : 전통문화예술 지도사·한국춤 명상댄스 지도사(이론·실기)</li>
+                  <li>
+                    교육대상 : 전통문화예술 지도사·한국춤 명상댄스
+                    지도사(이론·실기)
+                  </li>
                   <li>기간 : 2026년 9월 주말(1일)</li>
                   <li>장소 : 서울시내 학교</li>
                   <li>규모 : 30명</li>
@@ -356,7 +359,6 @@ export const projectsContent = [
               </li>
             </ul>
           </div>
-
         </section>
       </div>
     ),

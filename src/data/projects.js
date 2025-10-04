@@ -18,7 +18,7 @@ export const projects = [
     title: "전통문화예술 교육 인재육성",
     image: certi2025,
     target: "청소년·청년",
-    duration: "2025.10~2026.07",
+    duration: "2025.10~2026.09",
   },
   {
     id: "2026_2",
