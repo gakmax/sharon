@@ -117,7 +117,7 @@ export default function Organization() {
                 사무국
               </h4>
               <div className="ml-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {["이사장: 김죽엽(김태연)", "사무국장: 홍길동", "사무간사: 김민수"].map(
+                {["이사장: 김죽엽(김태연)", "사무국장: 정다경", "사무간사: 주홍희"].map(
                   (role) => (
                     <div
                       key={role}
