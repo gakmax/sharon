@@ -33,34 +33,89 @@ export default function Navbar() {
   };
 
   const menuItems = [
-    { key: "/", label: <Link className="text-[16px]" to="/">홈</Link> },
+    {
+      key: "/",
+      label: (
+        <Link className="text-[16px]" to="/">
+          홈
+        </Link>
+      ),
+    },
     {
       key: "/about",
-      label: <Link className="text-[16px]" to="/about/greeting" >예술단 소개</Link>,
+      label: (
+        <Link className="text-[16px]" to="/about/greeting">
+          예술단 소개
+        </Link>
+      ),
       children: [
         {
           key: "/about/greeting",
-          label: <Link className="text-[16px]" to="/about/greeting">인사말</Link>,
+          label: (
+            <Link className="text-[16px]" to="/about/greeting">
+              인사말
+            </Link>
+          ),
         },
         {
           key: "/about/introduce",
-          label: <Link className="text-[16px]" to="/about/introduce">예술단 소개</Link>,
+          label: (
+            <Link className="text-[16px]" to="/about/introduce">
+              예술단 소개
+            </Link>
+          ),
         },
         {
           key: "/about/organization",
-          label: <Link className="text-[16px]" to="/about/organization">조직도</Link>,
+          label: (
+            <Link className="text-[16px]" to="/about/organization">
+              조직도
+            </Link>
+          ),
         },
-        { key: "/about/history", label: <Link className="text-[16px]" to="/about/history">연혁</Link> },
+        {
+          key: "/about/history",
+          label: (
+            <Link className="text-[16px]" to="/about/history">
+              연혁
+            </Link>
+          ),
+        },
         {
           key: "/about/location",
-          label: <Link className="text-[16px]" to="/about/location">오시는길</Link>,
+          label: (
+            <Link className="text-[16px]" to="/about/location">
+              오시는길
+            </Link>
+          ),
         },
       ],
     },
-    { key: "/business", label: <Link className="text-[16px]" to="/business">주요사업</Link> },
-    { key: "/projects", label: <Link className="text-[16px]" to="/projects">교육프로그램</Link> },
+    {
+      key: "/business",
+      label: (
+        <Link className="text-[16px]" to="/business">
+          주요사업
+        </Link>
+      ),
+    },
+    {
+      key: "/projects",
+      label: (
+        <Link className="text-[16px]" to="/projects">
+          교육프로그램
+        </Link>
+      ),
+    },
     // { key: "/resources", label: <Link className="text-[16px]" to="/resources">자료실</Link> },
-    { key: "/notices", label: <Link className="text-[16px]" to="/notices">공지사항</Link> },
+    {
+      key: "/notices",
+      label: (
+        <Link className="text-[16px]" to="/notices">
+          공지사항
+        </Link>
+      ),
+    },
     // { key: "/contact", label: <Link className="text-[16px]" to="/contact">문의하기</Link> },
   ];
 
@@ -76,21 +131,19 @@ export default function Navbar() {
         boxShadow: "rgb(113 113 113) 0px 0px 4px 1px",
       }}
     >
-<div className="flex items-center mr-4 shrink-0">
-  <img
-    src={logo}
-    alt="logo"
-    className="
+      <div className="flex items-center mr-4 shrink-0">
+        <img
+          src={logo}
+          alt="logo"
+          className="
       cursor-pointer
-      h-8 md:h-10 lg:h-12   /* 화면 크기에 따라 높이 변경 */
+      h-6 md:h-8 lg:h-8   /* 화면 크기에 따라 높이 변경 */
       w-auto
-      max-h-[10vh]         /* 세로 길이가 화면 높이의 10% 넘지 않게 */
     "
-    onClick={() => (window.location.href = "/")}
-    loading="lazy"
-  />
-</div>
-
+          onClick={() => (window.location.href = "/")}
+          loading="lazy"
+        />
+      </div>
 
       <div style={{ flex: 1 }}>
         {!isMobile && (
