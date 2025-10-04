@@ -9,7 +9,7 @@ export const projects = [
     year: 2025,
     title: "전통문화예술 교육프로그램 개발",
     image: edu2025,
-    target: "유아·청소년·청년",
+    target: "청소년·청년",
     duration: "2025년도 프로그램 개발",
   },
   {
@@ -25,7 +25,7 @@ export const projects = [
     year: 2026,
     title: "전통문화예술 교육프로그램 개발 및 운영",
     image: edu2026,
-    target: "유아·청소년·청년",
+    target: "청소년·청년",
     duration: "2026.09 예정",
   },
   {
