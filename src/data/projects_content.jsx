@@ -77,14 +77,6 @@ export const projectsContent = [
           <p className="text-gray-700">교육 프로그램의 지속적 개발 및 운영</p>
         </section>
 
-        {/* 마. 소요예산 */}
-        <section>
-          <h3 className="text-lg font-bold mb-2">마. 소요예산</h3>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>2025년: 비예산</li>
-            <li>2026년: 4,200,000원 (개발인건비, 2,100,000원 × 1명 × 2개월)</li>
-          </ul>
-        </section>
       </div>
     ),
   },
@@ -124,10 +116,6 @@ export const projectsContent = [
             <li>직업 역량 표준에 맞춘 전문가 등급제도 마련</li>
             <li>월 단위 인재양성 준비사항 보고회 개최</li>
           </ul>
-
-          {/* 소요예산 */}
-          <h3 className="text-lg font-semibold mt-4 mb-2">다. 소요예산</h3>
-          <p className="text-gray-700">비예산</p>
         </section>
 
         {/* ② 전통문화예술 지도사 자격증 등록 발급 */}
@@ -166,24 +154,6 @@ export const projectsContent = [
             <br />∙ 이론 이수자에게 수료증·이수증 수여, 실기시험 합격자에게
             1급·2급·3급 자격증 부여
           </p>
-
-          {/* 소요예산 */}
-          <h3 className="text-lg font-semibold mt-4 mb-2">다. 소요예산</h3>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>2025년: 비예산</li>
-            <li>
-              2026년: 총 3,000,000원
-              <ul className="list-disc list-inside ml-4">
-                <li>교육장: 700,000원</li>
-                <li>교재비: 300,000원</li>
-                <li>강사비: 1,000,000원</li>
-                <li>식대: 400,000원</li>
-                <li>다과류: 300,000원</li>
-                <li>자격증 발급비용: 300,000원 (30명 × 10,000원)</li>
-              </ul>
-            </li>
-          </ul>
-
           <p className="mt-2 text-gray-700">
             ※ 교육비(교육생 자부담): 3,000,000원 (30명 × 100,000원)
           </p>
@@ -280,20 +250,6 @@ export const projectsContent = [
           <h2 className="text-xl font-bold mb-4">라. 향후계획</h2>
           <p className="text-gray-700">교육 프로그램 지속적 개발 및 운영</p>
         </section>
-
-        {/* 마. 소요예산 */}
-        <section>
-          <h2 className="text-xl font-bold mb-4">마. 소요예산</h2>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>2025년 : 비예산</li>
-            <li>
-              2026년 : 총 4,200,000원 (개발인건비)
-              <ul className="list-disc list-inside ml-6">
-                <li>개발인건비 : 2,100,000원 × 1명 × 2개월 = 4,200,000원</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
       </div>
     ),
   },
@@ -346,18 +302,12 @@ export const projectsContent = [
               <li>월 단위 인재양성 준비사항 보고회 개최</li>
             </ul>
           </div>
-
-          {/* 다. 소요예산 */}
-          <div>
-            <h3 className="text-xl font-semibold mb-3">다. 소요예산</h3>
-            <p className="text-gray-700">비예산</p>
-          </div>
         </section>
 
         {/* ② 전통문화예술 지도사 자격증 등록 발급 */}
         <section>
           <h2 className="text-2xl font-bold mb-6">
-            ② 전통문화예술 지도사 자격증 등록 발급 우수인재 양성
+            ② 전통문화예술 지도사ㆍ한국춤 명상댄스 지도사 자격증 등록 발급 우수인재 양성
           </h2>
 
           {/* 가. 세부내용 */}
@@ -391,11 +341,11 @@ export const projectsContent = [
                 전문가 양성 준비
               </li>
               <li>
-                2026. 7월 : 이론 및 실기시험을 통해 전문가 양성 및 자격증 발급
+                2026. 9월 : 이론 및 실기시험을 통해 전문가 양성 및 자격증 발급
                 추진
                 <ul className="list-disc list-inside ml-6 text-gray-700">
-                  <li>교육대상 : 전통문화예술 지도사(이론·실기)</li>
-                  <li>기간 : 2026년 7월 주말(1일)</li>
+                  <li>교육대상 : 전통문화예술 지도사·한국춤 명상댄스 지도사(이론·실기)</li>
+                  <li>기간 : 2026년 9월 주말(1일)</li>
                   <li>장소 : 서울시내 학교</li>
                   <li>규모 : 30명</li>
                   <li>
@@ -407,27 +357,6 @@ export const projectsContent = [
             </ul>
           </div>
 
-          {/* 다. 소요예산 */}
-          <div>
-            <h3 className="text-xl font-semibold mb-3">다. 소요예산</h3>
-            <ul className="list-disc list-inside text-gray-700">
-              <li>2025년 : 비예산</li>
-              <li>
-                2026년 : 총 3,000,000원
-                <ul className="list-disc list-inside ml-6">
-                  <li>교육장 : 700,000원</li>
-                  <li>교재비 : 300,000원</li>
-                  <li>강사비 : 1,000,000원</li>
-                  <li>식대 : 400,000원</li>
-                  <li>다과류 등 : 300,000원</li>
-                  <li>자격증 발급비 : 300,000원 (30명 × 10,000원)</li>
-                </ul>
-              </li>
-            </ul>
-            <p className="mt-2 text-gray-600 text-sm">
-              ※ 교육비(교육생 자부담) : 총 3,000,000원 (30명 × 100,000원/1인)
-            </p>
-          </div>
         </section>
       </div>
     ),

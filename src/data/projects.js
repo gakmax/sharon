@@ -34,6 +34,6 @@ export const projects = [
     title: "전통문화예술 지도사 자격증 과정",
     image: certi2026,
     target: "청소년·청년 지도자",
-    duration: "2026.07 예정",
+    duration: "2026.09 예정",
   },
 ];

@@ -410,14 +410,7 @@ export const businessContent = [
             <li>김죽엽 무용단 (정단원, 무궁화예술단 회원) 8명</li>
           </ul>
         </section>
-
-        {/* 소요예산 */}
-        <section>
-          <h3 className="text-xl font-semibold mb-3">○ 소요예산</h3>
-          <p className="text-gray-700">
-            비행기, 숙소, 체재비 등 마닐라 발레단 부담
-          </p>
-        </section>
+      
 
         {/* 기대효과 */}
         <section>
@@ -459,27 +452,6 @@ export const businessContent = [
             <li>한국-필리핀 민간단체 간 국제교류를 통한 국익 증진</li>
           </ul>
         </section>
-
-        {/* 소요예산 */}
-        <section>
-          <h3 className="text-xl font-semibold mb-3">○ 소요예산</h3>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>총 13,000천원</li>
-            <li>
-              마닐라대회 한국 참가단(4천만원): 한복, 비행기, 체재비, 통역비 등
-            </li>
-            <li>
-              부산, 대구(4천만원): 한복 패션, 무용, 국악, 가요, 아이돌 공연비,
-              통역비, 심사비, 대관료, 시상비, 광고비, 촬영비, 스텝비 등
-            </li>
-            <li>
-              서울(5천만원): 한복 패션, 무용, 국악, 가요, 아이돌 공연비, 통역비,
-              심사비, 대관료, 시상비, 광고비, 촬영비, 스텝비, 마닐라 본선 참가단
-              숙박·식사·체재비 포함
-            </li>
-          </ul>
-        </section>
-
         {/* 기대효과 */}
         <section>
           <h3 className="text-xl font-semibold mb-3">○ 기대효과</h3>
