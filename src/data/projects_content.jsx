@@ -153,9 +153,9 @@ export const projectsContent = [
             <br />∙ 이론 이수자에게 수료증·이수증 수여, 실기시험 합격자에게
             1급·2급·3급 자격증 부여
           </p>
-          <p className="mt-2 text-gray-700">
+          {/* <p className="mt-2 text-gray-700">
             ※ 교육비(교육생 자부담): 3,000,000원 (30명 × 100,000원)
-          </p>
+          </p> */}
         </section>
       </div>
     ),
