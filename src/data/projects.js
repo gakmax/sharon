@@ -17,7 +17,7 @@ export const projects = [
     year: 2025,
     title: "전통문화예술 교육 인재육성",
     image: certi2025,
-    target: "청소년·청년 지도자",
+    target: "청소년·청년",
     duration: "2025.10~2026.07",
   },
   {
@@ -31,9 +31,9 @@ export const projects = [
   {
     id: "2026_1",
     year: 2026,
-    title: "전통문화예술 지도사 자격증 과정",
+    title: "전통문화예술·한국춤 명상댄스 지도사 자격증 과정",
     image: certi2026,
-    target: "청소년·청년 지도자",
+    target: "청소년·청년",
     duration: "2026.09 예정",
   },
 ];

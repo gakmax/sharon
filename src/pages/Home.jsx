@@ -19,7 +19,7 @@ export default function Home() {
     {
       id: 1,
       title: "2025 전통문화예술 교육 인재육성",
-      date: "2025-10 ~ 2026.07",
+      date: "2025-10 ~ 2026.09",
       status: "진행중",
       link: "/projects/2025_1",
     },
