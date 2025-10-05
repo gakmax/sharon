@@ -11,7 +11,12 @@ export default function Footer() {
           <img
             src={logodark}
             alt="logo"
-            style={{ height: "50px", maxHeight: "10vh", width: "auto",marginBottom:"15px" }}
+            style={{
+              height: "50px",
+              maxHeight: "10vh",
+              width: "auto",
+              marginBottom: "15px",
+            }}
             className="cursor-pointer "
             onClick={() => (window.location.href = "/")}
             loading="lazy"
@@ -39,7 +44,7 @@ export default function Footer() {
             <span>소재지: 대구시 남구 명덕로34길 7, 2층</span>
           </p> */}
           <p className="flex items-center gap-2">
-            <span>사업자 번호: 621-82-11085</span>
+            <span>고유번호: 621-82-11085</span>
           </p>
         </div>
         <div className="text-center md:text-right text-sm space-y-1 md:mt-[40px]">
