@@ -22,20 +22,20 @@ export default function Location() {
 
     const renderMaps = () => {
       // 첫 번째 지도
-      // new window.daum.roughmap.Lander({
-      //   timestamp: "1759299831881",
-      //   key: "a3aoha7r6hq",
-      //   mapWidth: "640",
-      //   mapHeight: "360",
-      // }).render();
+      new window.daum.roughmap.Lander({
+        timestamp: "1759299831881",
+        key: "a3aoha7r6hq",
+        mapWidth: "640",
+        mapHeight: "360",
+      }).render();
 
       // 두 번째 지도
-      new window.daum.roughmap.Lander({
-        timestamp: "1759300557575",
-        key: "x98ctpct45w",
-        mapWidth: "100%",
-        mapHeight: "100%",
-      }).render();
+      // new window.daum.roughmap.Lander({
+      //   timestamp: "1759300557575",
+      //   key: "x98ctpct45w",
+      //   mapWidth: "100%",
+      //   mapHeight: "100%",
+      // }).render();
     };
 
     loadScript();
@@ -48,18 +48,18 @@ export default function Location() {
         <Content className="bg-white">
           <div className="my-8">
             <h3 className="text-xl font-semibold mb-2">무궁화예술단 위치</h3>
-            {/* <div
+            <div
               id="daumRoughmapContainer1759299831881"
               className="root_daum_roughmap root_daum_roughmap_landing"
-            ></div> */}
-            <div
+            ></div>
+            {/* <div
               id="daumRoughmapContainer1759300557575"
               className="root_daum_roughmap root_daum_roughmap_landing"
               style={{ width: "100%" }}
-            ></div>
+            ></div> */}
             <div className="flex gap-1 mt-4">
               <div className="text-gray-500">법인주사무실:</div>
-              <div>경남 양산시 동면 금산리 763 훼밀리타운 상가 1호</div>
+              <div>대구광역시 남구 명덕로34길 7,2층호(대명동)</div>
             </div>
           </div>
         </Content>

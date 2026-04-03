@@ -1,5 +1,22 @@
 import React from "react";
 
+import p2026_3_1 from "../assets/business/business_2026_3/1.png";
+import p2026_3_2 from "../assets/business/business_2026_3/2.png";
+import p2026_3_3 from "../assets/business/business_2026_3/3.png";
+import p2026_3_4 from "../assets/business/business_2026_3/4.png";
+import p2026_3_5 from "../assets/business/business_2026_3/5.png";
+import p2026_3_6 from "../assets/business/business_2026_3/6.png";
+import p2026_3_7 from "../assets/business/business_2026_3/7.png";
+import p2026_3_8 from "../assets/business/business_2026_3/8.png";
+import p2026_3_9 from "../assets/business/business_2026_3/9.png";
+import p2026_3_10 from "../assets/business/business_2026_3/10.png";
+import p2026_3_11 from "../assets/business/business_2026_3/11.png";
+import p2026_3_12 from "../assets/business/business_2026_3/12.png";
+import p2026_3_13 from "../assets/business/business_2026_3/13.png";
+import p2026_3_14 from "../assets/business/business_2026_3/14.png";
+import p2026_3_15 from "../assets/business/business_2026_3/15.png";
+import p2026_3_16 from "../assets/business/business_2026_3/16.png";
+
 export const businessContent = [
   {
     id: "2025_2",
@@ -241,7 +258,7 @@ export const businessContent = [
         <section>
           <h3 className="text-xl font-semibold mb-3">○ 사업기간 및 장소</h3>
           <ul className="list-disc list-inside text-gray-700">
-            <li>사업기간 : 2026년 3월 29일</li>
+            <li>사업기간 : 2026년 3월 8일</li>
             <li>장소 : 대구 아양아트센터 (예정)</li>
           </ul>
         </section>
@@ -272,7 +289,7 @@ export const businessContent = [
             현직 대학 무용과 교수, 사계 권위자, 전문가 등
           </p>
           <ul className="list-disc list-inside text-gray-700">
-            <li>전국무용 “한맥” 예술제 운영규정 및 심사규정에 의거 심사</li>
+            <li>전국무용 예술제 운영규정 및 심사규정에 의거 심사</li>
             <li>심사의 공정성을 위해 심사위원은 경연 당일 발표</li>
           </ul>
         </section>
@@ -380,52 +397,24 @@ export const businessContent = [
   {
     id: "2026_3",
     content: (
-      <div className="space-y-8">
-        {/* 협의사항 */}
+      <div className="space-y-8 flex justify-center">
         <section>
-          <h3 className="text-xl font-semibold mb-3">○ 협의사항</h3>
-          <p className="text-gray-700">
-            공연 일정(3월 ~ 9월), 내용 및 장소 등 협의 중
-          </p>
-        </section>
-
-        {/* 주요내용 */}
-        <section>
-          <h3 className="text-xl font-semibold mb-3">○ 주요내용</h3>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>4~5월 : 한국 춤 명상무용 연수 2일 예정</li>
-            <li>
-              8~9월 : 마닐라 발레단과 한국 춤 명상무용 협연 공연 추진 (일정 협의
-              중)
-            </li>
-            <li>한국 춤 명상무용 공연 구체적 준비</li>
-          </ul>
-        </section>
-
-        {/* 연수 및 공연자 */}
-        <section>
-          <h3 className="text-xl font-semibold mb-3">○ 연수 및 공연자</h3>
-          <ul className="list-disc list-inside text-gray-700">
-            <li>필리핀 마닐라 발레단</li>
-            <li>김죽엽 무용단 (정단원, 무궁화예술단 회원) 8명</li>
-          </ul>
-        </section>
-      
-
-        {/* 기대효과 */}
-        <section>
-          <h3 className="text-xl font-semibold mb-3">○ 기대효과</h3>
-          <p className="text-gray-700">
-            한국 춤 명상무용 세계화 및 국제 위상 제고
-          </p>
-        </section>
-
-        {/* 향후계획 */}
-        <section>
-          <h3 className="text-xl font-semibold mb-3">○ 향후계획</h3>
-          <p className="text-gray-700">
-            매년 마닐라 발레단과 한국 춤 명상무용 협연 공연 추진
-          </p>
+          <img src={p2026_3_1} />
+          <img src={p2026_3_2} />
+          <img src={p2026_3_3} />
+          <img src={p2026_3_4} />
+          <img src={p2026_3_5} />
+          <img src={p2026_3_6} />
+          <img src={p2026_3_7} />
+          <img src={p2026_3_8} />
+          <img src={p2026_3_9} />
+          <img src={p2026_3_10} />
+          <img src={p2026_3_11} />
+          <img src={p2026_3_12} />
+          <img src={p2026_3_13} />
+          <img src={p2026_3_14} />
+          <img src={p2026_3_15} />
+          <img src={p2026_3_16} />
         </section>
       </div>
     ),

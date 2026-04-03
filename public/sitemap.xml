@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 기본 페이지 -->
+  <url>
+    <loc>https://mugunghwa-art.com/</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://mugunghwa-art.com/terms</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://mugunghwa-art.com/privacy</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://mugunghwa-art.com/contact</loc>
+    <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- About -->
+  <url><loc>https://mugunghwa-art.com/about</loc></url>
+  <url><loc>https://mugunghwa-art.com/about/history</loc></url>
+  <url><loc>https://mugunghwa-art.com/about/introduce</loc></url>
+  <url><loc>https://mugunghwa-art.com/about/greeting</loc></url>
+  <url><loc>https://mugunghwa-art.com/about/location</loc></url>
+  <url><loc>https://mugunghwa-art.com/about/organization</loc></url>
+
+  <!-- Business -->
+  <url><loc>https://mugunghwa-art.com/business</loc></url>
+
+  <!-- Projects -->
+  <url><loc>https://mugunghwa-art.com/projects</loc></url>
+
+  <!-- Resources -->
+  <url><loc>https://mugunghwa-art.com/resources</loc></url>
+
+  <!-- Notices -->
+  <url><loc>https://mugunghwa-art.com/notices</loc></url>
+
+</urlset>

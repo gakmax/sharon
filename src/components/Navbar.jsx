@@ -14,11 +14,12 @@ const { SubMenu } = Menu;
 export default function Navbar() {
   const location = useLocation();
   const [visible, setVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768);
-    onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -136,10 +137,10 @@ export default function Navbar() {
           src={logo}
           alt="logo"
           className="
-      cursor-pointer
-      h-6 md:h-8 lg:h-8   /* 화면 크기에 따라 높이 변경 */
-      w-auto
-    "
+            cursor-pointer
+            h-6 md:h-8 lg:h-8   
+            w-auto
+          "
           onClick={() => (window.location.href = "/")}
           loading="lazy"
         />

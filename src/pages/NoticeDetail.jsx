@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Card, Button } from "antd";
 import { notices } from "../data/noticedata";
 import { UpOutlined, DownOutlined } from "@ant-design/icons";
+import EmailModal from "../components/EmailModal";
 
 export default function NoticeDetail() {
   const { id } = useParams();
   const currentId = parseInt(id, 10);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
 
   const n = notices.find((x) => parseInt(x.id, 10) === currentId);
   if (!n) return <div>공지사항을 찾을 수 없습니다.</div>;
 
   const sorted = [...notices].sort(
-    (a, b) => parseInt(a.id, 10) - parseInt(b.id, 10)
+    (a, b) => parseInt(a.id, 10) - parseInt(b.id, 10),
   );
   const idx = sorted.findIndex((x) => parseInt(x.id, 10) === currentId);
 
@@ -26,6 +36,16 @@ export default function NoticeDetail() {
         <h2 className="text-2xl font-bold mb-2">{n.title}</h2>
         <p className="text-sm text-gray-500 mb-4">{n.date}</p>
         <div className="mb-6">{n.content}</div>
+
+        {n.modal && (
+          <div className="place-self-center mb-4">
+            <Button type="primary" size="large" onClick={showModal}>
+              참가 신청서 제출하기
+            </Button>
+
+            <EmailModal isOpen={isModalOpen} onClose={handleClose} />
+          </div>
+        )}
 
         <div className="border-t pt-4 space-y-3">
           {prev && (

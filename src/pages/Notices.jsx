@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Table } from "antd";
 import { useNavigate } from "react-router-dom";
 import { notices } from "../data/noticedata";
 import group from "../assets/group.png";
+import { getNotices } from "../api";
 
 export default function Notices() {
   const navigate = useNavigate();
   const reversedNotices = [...notices].reverse();
+  const [notice, setNotice] = useState([]);
+
+  useEffect(() => {
+    getNotices().then((data) => setNotice(data));
+  }, []);
 
   const cols = [
     {

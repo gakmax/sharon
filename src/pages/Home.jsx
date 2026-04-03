@@ -25,14 +25,15 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "김죽엽 25번째 전통춤판 '인연'",
-      date: "2025-11-02",
-      link: "/business/2025_1",
+      title: "제1회 한국국제 춤 페스티벌 천원지방",
+      date: "2026-04-10",
+      link: "/business/2026_3",
     },
     {
       id: 3,
-      title: "제 48회 전국무용 '한맥' 예술제",
-      date: "2026-03-29",
+      title: "제 48회 전국무용예술제",
+      date: "2026-03-08",
+      status: "종료",
       link: "/business/2026_5",
     },
     {
@@ -47,6 +48,12 @@ export default function Home() {
     if (status === "진행중") {
       return {
         text: "진행중",
+        colorClass: "text-gray-500",
+      };
+    }
+    if (status === "종료") {
+      return {
+        text: "종료",
         colorClass: "text-gray-500",
       };
     }

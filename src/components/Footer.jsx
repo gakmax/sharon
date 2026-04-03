@@ -40,9 +40,10 @@ export default function Footer() {
             <span>대표번호: 053-656-8966</span>
           </p>
           <p className="flex items-center gap-2"></p>
-          {/* <p className="flex items-center gap-2">
-            <span>소재지: 대구시 남구 명덕로34길 7, 2층</span>
-          </p> */}
+          <p className="flex items-center gap-2">
+            <span>소재지: 대구광역시 남구 명덕로34길 7,2층호(대명동)</span>
+          </p>
+          <p className="flex items-center gap-2"></p>
           <p className="flex items-center gap-2">
             <span>고유번호: 621-82-11085</span>
           </p>

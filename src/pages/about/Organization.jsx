@@ -4,8 +4,6 @@ import AboutLayout from "../../components/AboutLayout";
 import organization from "../../assets/organization.png";
 import mcstbig from "../../assets/mcst_big.webp";
 
-
-
 const { Sider, Content } = Layout;
 
 export default function Organization() {
@@ -37,7 +35,7 @@ export default function Organization() {
                 있습니다.
               </p>
             </div>
-            <div>
+            {/* <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
                 <span className="w-3 h-3 bg-gray-400 inline-block rounded-full"></span>
                 소속기관
@@ -49,7 +47,7 @@ export default function Organization() {
                 loading="lazy"
                 onClick={() => window.open("https://www.mcst.go.kr", "_blank")}
               />
-            </div>
+            </div> */}
             <div>
               <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
                 <span className="w-3 h-3 bg-gray-400 inline-block rounded-full"></span>
@@ -117,21 +115,23 @@ export default function Organization() {
                 사무국
               </h4>
               <div className="ml-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {["이사장: 김죽엽(김태연)", "사무국장: 정다경", "사무간사: 주홍희"].map(
-                  (role) => (
-                    <div
-                      key={role}
-                      className="p-4 bg-green-50 rounded-lg shadow  transition transform "
-                    >
-                      <span className="block text-sm text-gray-500 mb-1">
-                        {role.split(":")[0]}
-                      </span>
-                      <span className="block font-semibold text-gray-800">
-                        {role.split(":")[1]}
-                      </span>
-                    </div>
-                  )
-                )}
+                {[
+                  "이사장: 김죽엽(김태연)",
+                  "사무국장: 정다경",
+                  "사무간사: 주홍희",
+                ].map((role) => (
+                  <div
+                    key={role}
+                    className="p-4 bg-green-50 rounded-lg shadow  transition transform "
+                  >
+                    <span className="block text-sm text-gray-500 mb-1">
+                      {role.split(":")[0]}
+                    </span>
+                    <span className="block font-semibold text-gray-800">
+                      {role.split(":")[1]}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
