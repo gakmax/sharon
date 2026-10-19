@@ -1,40 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* small helpers */
-body {
-  @apply bg-white text-gray-800;
-}
-.header-shadow {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+@layer base {
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.primary.DEFAULT");
+    outline-offset: 2px;
+  }
 }
 
-.nanum-myeongjo-regular {
-  font-family: "Nanum Myeongjo", serif;
-  font-weight: 400;
-  font-style: normal;
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-4 sm:px-6;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover hover:text-white;
+  }
+  .field-input {
+    @apply h-11 w-full rounded border border-line bg-surface px-3 text-[15px] text-ink placeholder:text-ink-muted/60 focus:border-primary focus:outline-none disabled:bg-surface-2;
+  }
+  .field-input[aria-invalid="true"] {
+    @apply border-red-600;
+  }
+  .chip {
+    @apply rounded border border-line bg-surface px-3 py-2 text-sm text-ink transition-colors hover:border-ink aria-pressed:border-primary aria-pressed:bg-primary-soft aria-pressed:font-semibold aria-pressed:text-primary;
+  }
+  .prose-site img {
+    @apply mx-auto my-4 rounded-card;
+  }
+  .prose-site h3 {
+    @apply mb-3 mt-8 font-sans text-lg font-bold text-ink;
+  }
+  .prose-site p,
+  .prose-site li {
+    @apply leading-relaxed;
+  }
+  .prose-site a {
+    @apply text-primary underline underline-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded border border-line bg-surface px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary;
+  }
 }
 
+/* antd 보정 */
 .ant-layout {
-  background: white;
+  background: transparent;
 }
-
 .ant-table-content {
-  border: 1px solid #f0f0f0;
+  border: 1px solid #dcd5c9;
 }
 
+/* 다음 로드맵(오시는 길) 위젯의 주소 바 숨김 */
 .section_address {
   display: none;
-}
-
-@media (max-width: 500px) {
-  .nts-logo {
-    display: none !important;
-  }
-}
-
-@media (max-width: 500px) {
-  .nts-logo-mobile {
-    display: block !important;
-  }
 }

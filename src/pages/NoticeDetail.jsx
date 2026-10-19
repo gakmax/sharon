@@ -1,78 +1,62 @@
-import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { Card, Button } from "antd";
+import React from "react";
+import { useParams } from "react-router-dom";
+import DetailLayout from "../components/DetailLayout";
+import PageHeader from "../components/PageHeader";
+import { CategoryBadge, Badge } from "../components/Badge";
 import { notices } from "../data/noticedata";
-import { UpOutlined, DownOutlined } from "@ant-design/icons";
-import EmailModal from "../components/EmailModal";
+import { business } from "../data/business";
+import { ORG } from "../data/nav";
+
+const SECTION = { label: "공지사항", to: "/notices" };
 
 export default function NoticeDetail() {
   const { id } = useParams();
   const currentId = parseInt(id, 10);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleClose = () => {
-    setIsModalOpen(false);
-  };
-
   const n = notices.find((x) => parseInt(x.id, 10) === currentId);
-  if (!n) return <div>공지사항을 찾을 수 없습니다.</div>;
 
-  const sorted = [...notices].sort(
-    (a, b) => parseInt(a.id, 10) - parseInt(b.id, 10),
-  );
+  if (!n) {
+    return (
+      <>
+        <PageHeader title={SECTION.label} breadcrumb={[SECTION]} />
+        <div className="container-site py-14 text-ink-muted">공지사항을 찾을 수 없습니다.</div>
+      </>
+    );
+  }
+
+  const sorted = [...notices].sort((a, b) => parseInt(a.id, 10) - parseInt(b.id, 10));
   const idx = sorted.findIndex((x) => parseInt(x.id, 10) === currentId);
-
   const prev = idx > 0 ? sorted[idx - 1] : null;
   const next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
 
+  const related = [];
+  if (n.relatedProgram) {
+    const bid = n.relatedProgram.split("/").pop();
+    const b = business.find((x) => x.id === bid);
+    if (b) related.push({ label: b.title, to: n.relatedProgram });
+  }
+
+  const meta = [{ label: "작성일", value: n.notice_date }];
+  if (n.note) meta.push({ label: "접수", value: n.note });
+
   return (
-    <div className="">
-      <h1 className="text-2xl font-bold mb-4">공지사항</h1>
-      <Card>
-        <h2 className="text-2xl font-bold mb-2">{n.title}</h2>
-        <p className="text-sm text-gray-500 mb-4">{n.date}</p>
-        <div className="mb-6">{n.content}</div>
-
-        {n.modal && (
-          <div className="place-self-center mb-4">
-            <Button type="primary" size="large" onClick={showModal}>
-              참가 신청서 제출하기
-            </Button>
-
-            <EmailModal isOpen={isModalOpen} onClose={handleClose} />
-          </div>
-        )}
-
-        <div className="border-t pt-4 space-y-3">
-          {prev && (
-            <Link
-              to={`/notices/${prev.id}`}
-              className="block text-gray-700 hover:text-blue-600"
-            >
-              <UpOutlined className="mr-2" />
-              {prev.title}
-            </Link>
-          )}
-          {next && (
-            <Link
-              to={`/notices/${next.id}`}
-              className="block text-gray-700 hover:text-blue-600"
-            >
-              <DownOutlined className="mr-2" />
-              {next.title}
-            </Link>
-          )}
-        </div>
-      </Card>
-      <div className="mt-4 float-right">
-        <Button type="default">
-          <Link to="/notices">목록</Link>
-        </Button>
-      </div>
-    </div>
+    <DetailLayout
+      section={SECTION}
+      title={n.title}
+      badges={
+        <>
+          <CategoryBadge category={n.category} />
+          {n.status && <Badge tone="primary">{n.status}</Badge>}
+        </>
+      }
+      meta={meta}
+      cta={n.apply ? { label: "참가 신청서 작성", to: `/apply/${n.apply}` } : undefined}
+      prev={prev && { title: prev.title, to: `/notices/${prev.id}` }}
+      next={next && { title: next.title, to: `/notices/${next.id}` }}
+      related={related}
+      image={undefined}
+      description={`${n.title} · ${n.notice_date} · ${ORG.name} 공지사항`}
+    >
+      {n.content}
+    </DetailLayout>
   );
 }

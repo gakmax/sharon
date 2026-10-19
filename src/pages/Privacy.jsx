@@ -1,11 +1,11 @@
 import React from "react";
+import PageHeader from "../components/PageHeader";
 
 export default function Privacy() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-      <h1 className="text-2xl font-bold mb-6">
-        개인정보처리방침 (Privacy Policy)
-      </h1>
+    <>
+      <PageHeader title="개인정보처리방침" description="수집하는 개인정보 항목과 이용 목적, 보유 기간을 안내합니다." breadcrumb={[{ label: "개인정보처리방침" }]} />
+      <div className="container-site max-w-prose py-10 text-ink md:py-14 [&_h2]:mt-8 [&_h2]:font-sans [&_h2]:text-base [&_p]:leading-relaxed [&_p]:text-ink-muted">
 
       <section className="space-y-4">
         <p>
@@ -58,5 +58,6 @@ export default function Privacy() {
         </ul>
       </section>
     </div>
+    </>
   );
 }

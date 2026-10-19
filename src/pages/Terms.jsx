@@ -1,9 +1,11 @@
 import React from "react";
+import PageHeader from "../components/PageHeader";
 
 export default function Terms() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-      <h1 className="text-2xl font-bold mb-6">이용약관 (Terms of Service)</h1>
+    <>
+      <PageHeader title="이용약관" description="사단법인 무궁화예술단 웹사이트 이용 조건과 절차입니다." breadcrumb={[{ label: "이용약관" }]} />
+      <div className="container-site max-w-prose py-10 text-ink md:py-14 [&_h2]:mt-8 [&_h2]:font-sans [&_h2]:text-base [&_p]:leading-relaxed [&_p]:text-ink-muted">
 
       <section className="space-y-4">
         <h2 className="font-semibold">제1조 (목적)</h2>
@@ -94,5 +96,6 @@ export default function Terms() {
         </p>
       </section>
     </div>
+    </>
   );
 }

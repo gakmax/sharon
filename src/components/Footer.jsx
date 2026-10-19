@@ -1,63 +1,96 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ntsbig from "../assets/nts_big.png";
-import mcstbig from "../assets/mcst_big.webp";
-import logodark from "../assets/logo_dark.png";
+import { NAV, CONTACT_LINK, ORG, PARTNERS } from "../data/nav";
+import logo from "../assets/logo.png";
+
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-800 text-gray-200 py-8 mt-12">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-center md:place-items-start space-y-1 text-gray-300 sm:place-items-center place-items-center">
-          <img
-            src={logodark}
-            alt="logo"
-            style={{
-              height: "50px",
-              maxHeight: "10vh",
-              width: "auto",
-              marginBottom: "15px",
-            }}
-            className="cursor-pointer "
-            onClick={() => (window.location.href = "/")}
-            loading="lazy"
-          />
-          <img
-            src={ntsbig}
-            alt="NTS"
-            className="cursor-pointer w-full max-w-[100px]  nts-logo-mobile hidden justify-self-center"
-            onClick={() => window.open("https://www.nts.go.kr", "_blank")}
-            loading="lazy"
-          />
-          <img
-            src={mcstbig}
-            alt="MCST"
-            className="cursor-pointer w-full max-w-[200px]  nts-logo-mobile hidden justify-self-center"
-            onClick={() => window.open("https://www.mcst.go.kr", "_blank")}
-            loading="lazy"
-          />
-          <p className="flex items-center gap-2 mb-0 mt-6 flex-wrap">
-            <span>대표: 김죽엽(김태연) |</span>
-            <span>대표번호: 053-656-8966</span>
-          </p>
-          <p className="flex items-center gap-2"></p>
-          <p className="flex items-center gap-2">
-            <span>소재지: 대구광역시 남구 명덕로34길 7,2층호(대명동)</span>
-          </p>
-          <p className="flex items-center gap-2"></p>
-          <p className="flex items-center gap-2">
-            <span>고유번호: 621-82-11085</span>
-          </p>
+    <footer className="mt-20 border-t border-line bg-surface-2/70 text-sm">
+      <div className="container-site grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div>
+          <Link to="/" className="inline-block" aria-label={`${ORG.name} 홈`}>
+            <img src={logo} alt={ORG.name} className="h-8 w-auto" loading="lazy" />
+          </Link>
+          <dl className="mt-5 space-y-1.5 text-ink-muted">
+            <div className="flex gap-3">
+              <dt className="w-14 shrink-0">대표</dt>
+              <dd>{ORG.representative}</dd>
+            </div>
+            <div className="flex gap-3">
+              <dt className="w-14 shrink-0">고유번호</dt>
+              <dd>{ORG.regNo}</dd>
+            </div>
+            <div className="flex gap-3">
+              <dt className="w-14 shrink-0">소재지</dt>
+              <dd>{ORG.address}</dd>
+            </div>
+          </dl>
         </div>
-        <div className="text-center md:text-right text-sm space-y-1 md:mt-[40px]">
-          <div className="flex justify-center md:justify-end gap-4 text-gray-400">
-            <Link to="/terms" className="hover:text-gray-200">
+
+        <nav aria-label="사이트맵">
+          <h2 className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-ink-muted">
+            메뉴
+          </h2>
+          <ul className="space-y-2">
+            {NAV.map((item) => (
+              <li key={item.key}>
+                <Link to={item.to} className="text-ink hover:text-primary">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link to={CONTACT_LINK.to} className="text-ink hover:text-primary">
+                {CONTACT_LINK.label}
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-ink-muted">
+            연락처
+          </h2>
+          <a
+            href={`tel:${ORG.phone.replace(/-/g, "")}`}
+            className="font-sans text-xl font-semibold text-ink hover:text-primary"
+          >
+            {ORG.phone}
+          </a>
+          <p className="mt-1 text-ink-muted">공연 초청 · 교육 신청 · 후원 문의</p>
+          <Link to="/about/location" className="mt-2 inline-block text-primary hover:underline">
+            오시는 길 →
+          </Link>
+          <ul className="mt-6 flex items-center gap-5" aria-label="관련 기관">
+            {PARTNERS.map((p) => (
+              <li key={p.name}>
+                <a href={p.url} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="h-7 w-auto opacity-80 transition-opacity hover:opacity-100"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-line">
+        <div className="container-site flex flex-col gap-2 py-4 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>© {year} {ORG.name}. All rights reserved.</p>
+          <div className="flex gap-4">
+            <Link to="/terms" className="hover:text-ink">
               이용약관
             </Link>
-            <Link to="/privacy" className="hover:text-gray-200">
+            <Link to="/privacy" className="hover:text-ink">
               개인정보처리방침
             </Link>
           </div>
-          <p>Copyright ⓒ 2025 사단법인 무궁화예술단 All rights reserved.</p>
         </div>
       </div>
     </footer>

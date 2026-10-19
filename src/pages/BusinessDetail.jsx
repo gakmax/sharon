@@ -1,74 +1,68 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
-import { Card, Button } from "antd";
+import { useParams } from "react-router-dom";
+import DetailLayout from "../components/DetailLayout";
+import PageHeader from "../components/PageHeader";
+import { StatusBadge } from "../components/Badge";
 import { business } from "../data/business";
-import { UpOutlined, DownOutlined } from "@ant-design/icons";
 import { businessContent } from "../data/business_content";
+import { notices } from "../data/noticedata";
+import { getStatusKey } from "../lib/status";
+
+const SECTION = { label: "주요사업", to: "/business" };
 
 export default function BusinessDetail() {
   const { id } = useParams();
-  const currentId = id;
+  const p = business.find((x) => x.id === id);
+  const c = businessContent.find((x) => x.id === id);
 
-  const p = business.find((x) => x.id === currentId);
-  const c = businessContent.find((x) => x.id === currentId);
-  if (!p || !c) return <div>프로젝트를 찾을 수 없습니다.</div>;
+  if (!p || !c) {
+    return (
+      <>
+        <PageHeader title={SECTION.label} breadcrumb={[SECTION]} />
+        <div className="container-site py-14 text-ink-muted">사업 정보를 찾을 수 없습니다.</div>
+      </>
+    );
+  }
 
-  // 정렬 (연도 + id 기준)
-  const sorted = [...business].sort((a, b) => {
-    if (a.year !== b.year) return a.year - b.year;
-    return a.id.localeCompare(b.id);
-  });
-  const idx = sorted.findIndex((x) => x.id === currentId);
-
+  const sorted = [...business].sort((a, b) =>
+    a.year !== b.year ? a.year - b.year : a.id.localeCompare(b.id)
+  );
+  const idx = sorted.findIndex((x) => x.id === id);
   const prev = idx > 0 ? sorted[idx - 1] : null;
   const next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
+  const statusKey = getStatusKey(p);
+
+  const related = (p.relatedNotices ?? [])
+    .map((nid) => notices.find((n) => n.id === nid))
+    .filter(Boolean)
+    .map((n) => ({ label: n.title, to: `/notices/${n.id}` }));
 
   return (
-    <div className="">
-      <h1 className="text-2xl font-bold mb-4">주요 사업</h1>
-      <Card>
-        <h2 className="text-2xl font-bold mb-2">{p.title}</h2>
-        <div className="space-y-0 text-gray-700 border-b-[1px] mb-4 pb-4">
-          <p className="mb-0">
-            <span className="font-semibold">대상:</span> {p.target}
-          </p>
-          <p>
-            <span className="font-semibold">기간:</span> {p.duration}
-          </p>
-        </div>
-
-        {/* 내용 */}
-
-        {/* Prev/Next */}
-        <div>{c.content}</div>
-        <div className="border-t pt-4 space-y-3">
-          {prev && (
-            <Link
-              to={`/business/${prev.id}`}
-              className="block text-gray-700 hover:text-blue-600"
-            >
-              <UpOutlined className="mr-2" />
-              {prev.title}
-            </Link>
-          )}
-          {next && (
-            <Link
-              to={`/business/${next.id}`}
-              className="block text-gray-700 hover:text-blue-600"
-            >
-              <DownOutlined className="mr-2" />
-              {next.title}
-            </Link>
-          )}
-        </div>
-      </Card>
-
-      {/* 목록 버튼 */}
-      <div className="mt-4 float-right">
-        <Button type="default">
-          <Link to="/business">목록</Link>
-        </Button>
-      </div>
-    </div>
+    <DetailLayout
+      section={SECTION}
+      title={p.title}
+      badges={
+        <>
+          <StatusBadge statusKey={statusKey} />
+          <span className="text-sm text-ink-muted">{p.year}년 · 공연·행사</span>
+        </>
+      }
+      meta={[
+        { label: "대상", value: p.target },
+        { label: "기간", value: p.duration },
+      ]}
+      cta={
+        p.apply && statusKey !== "ended"
+          ? { label: "참가 신청서 작성", to: `/apply/${p.apply}` }
+          : undefined
+      }
+      prev={prev && { title: prev.title, to: `/business/${prev.id}` }}
+      next={next && { title: next.title, to: `/business/${next.id}` }}
+      related={related}
+      image={p.image}
+      description={`${p.title} · 대상 ${p.target} · ${p.duration}`}
+    >
+      {c.content}
+    </DetailLayout>
   );
 }

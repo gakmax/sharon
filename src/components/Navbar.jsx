@@ -1,233 +1,144 @@
-import React, { useState, useEffect } from "react";
-import { Layout, Menu, Button, Drawer, Typography } from "antd";
+import React, { useEffect, useState } from "react";
+import { Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
-
-import nts from "../assets/nts.png";
-import mcst from "../assets/mcst.png";
+import { NAV, CONTACT_LINK, ORG, PARTNERS, activeNavKey } from "../data/nav";
 import logo from "../assets/logo.png";
 
-const { Header } = Layout;
-const { Title } = Typography;
-const { SubMenu } = Menu;
+const linkBase =
+  "rounded px-3 py-2 text-[15px] font-medium transition-colors hover:text-primary";
+
+function DesktopItem({ item, active }) {
+  const cls = `${linkBase} ${active ? "text-primary" : "text-ink"}`;
+  if (!item.children) {
+    return (
+      <Link to={item.to} className={cls} aria-current={active ? "page" : undefined}>
+        {item.label}
+      </Link>
+    );
+  }
+  return (
+    <div className="group relative">
+      <Link to={item.to} className={cls} aria-haspopup="true">
+        {item.label}
+      </Link>
+      <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+        <ul className="min-w-[160px] rounded-card border border-line bg-surface py-1.5 shadow-float">
+          {item.children.map((child) => (
+            <li key={child.to}>
+              <Link
+                to={child.to}
+                className="block px-4 py-2 text-sm text-ink hover:bg-surface-2 hover:text-primary"
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 export default function Navbar() {
-  const location = useLocation();
-  const [visible, setVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" ? window.innerWidth < 768 : false
-  );
+  const { pathname } = useLocation();
+  const [open, setOpen] = useState(false);
+  const active = activeNavKey(pathname);
 
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  const getSelectedKey = () => {
-    const path = location.pathname;
-    if (path.startsWith("/about")) return "/about";
-    if (path.startsWith("/business")) return "/business";
-    if (path.startsWith("/projects")) return "/projects";
-    if (path.startsWith("/notices")) return "/notices";
-    return "/";
-  };
-
-  const menuItems = [
-    {
-      key: "/",
-      label: (
-        <Link className="text-[16px]" to="/">
-          홈
-        </Link>
-      ),
-    },
-    {
-      key: "/about",
-      label: (
-        <Link className="text-[16px]" to="/about/greeting">
-          예술단 소개
-        </Link>
-      ),
-      children: [
-        {
-          key: "/about/greeting",
-          label: (
-            <Link className="text-[16px]" to="/about/greeting">
-              인사말
-            </Link>
-          ),
-        },
-        {
-          key: "/about/introduce",
-          label: (
-            <Link className="text-[16px]" to="/about/introduce">
-              예술단 소개
-            </Link>
-          ),
-        },
-        {
-          key: "/about/organization",
-          label: (
-            <Link className="text-[16px]" to="/about/organization">
-              조직도
-            </Link>
-          ),
-        },
-        {
-          key: "/about/history",
-          label: (
-            <Link className="text-[16px]" to="/about/history">
-              연혁
-            </Link>
-          ),
-        },
-        {
-          key: "/about/location",
-          label: (
-            <Link className="text-[16px]" to="/about/location">
-              오시는길
-            </Link>
-          ),
-        },
-      ],
-    },
-    {
-      key: "/business",
-      label: (
-        <Link className="text-[16px]" to="/business">
-          주요사업
-        </Link>
-      ),
-    },
-    {
-      key: "/projects",
-      label: (
-        <Link className="text-[16px]" to="/projects">
-          교육프로그램
-        </Link>
-      ),
-    },
-    // { key: "/resources", label: <Link className="text-[16px]" to="/resources">자료실</Link> },
-    {
-      key: "/notices",
-      label: (
-        <Link className="text-[16px]" to="/notices">
-          공지사항
-        </Link>
-      ),
-    },
-    // { key: "/contact", label: <Link className="text-[16px]" to="/contact">문의하기</Link> },
-  ];
+  // 페이지 이동 시 모바일 메뉴 닫기
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <Header
-      className="header-shadow fixed top-0 left-0 right-0 z-50"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        padding: "0 24px",
-        background: "white",
-        color: "black",
-        boxShadow: "rgb(113 113 113) 0px 0px 4px 1px",
-      }}
-    >
-      <div className="flex items-center mr-4 shrink-0">
-        <img
-          src={logo}
-          alt="logo"
-          className="
-            cursor-pointer
-            h-6 md:h-8 lg:h-8   
-            w-auto
-          "
-          onClick={() => (window.location.href = "/")}
-          loading="lazy"
-        />
-      </div>
+    <header className="fixed inset-x-0 top-0 z-50 h-16 border-b border-line bg-paper/95 backdrop-blur">
+      <div className="container-site flex h-full items-center justify-between gap-3 md:gap-6">
+        <Link to="/" className="flex shrink-0 items-center" aria-label={`${ORG.name} 홈`}>
+          <img src={logo} alt={ORG.name} className="h-6 w-auto md:h-8" />
+        </Link>
 
-      <div style={{ flex: 1 }}>
-        {!isMobile && (
-          <Menu
-            mode="horizontal"
-            selectedKeys={[getSelectedKey()]}
-            style={{
-              background: "transparent",
-              borderBottom: "none",
-              justifyContent: "center",
-            }}
+        <nav className="hidden items-center gap-1 md:flex" aria-label="주 메뉴">
+          {NAV.map((item) => (
+            <DesktopItem key={item.key} item={item} active={active === item.key} />
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2 md:gap-3">
+          {/* 고객 요청: 국세청·문체부 마크는 헤더 우측 상단 고정 */}
+          <ul className="flex items-center gap-2 md:gap-3" aria-label="관련 기관">
+            {PARTNERS.map((p) => (
+              <li key={p.name} className="flex">
+                <a href={p.url} target="_blank" rel="noopener noreferrer" className="flex">
+                  <img src={p.logo} alt={p.name} className="h-5 w-auto md:h-7" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <Link to={CONTACT_LINK.to} className="btn-primary hidden !py-2 lg:inline-flex">
+            {CONTACT_LINK.label}
+          </Link>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded text-ink hover:bg-surface-2 md:hidden"
+            aria-label="메뉴 열기"
+            aria-expanded={open}
+            onClick={() => setOpen(true)}
           >
-            {menuItems.map((item) => {
-              if (item.children) {
-                return (
-                  <SubMenu key={item.key} title={item.label}>
-                    {item.children.map((sub) => (
-                      <Menu.Item key={sub.key}>{sub.label}</Menu.Item>
-                    ))}
-                  </SubMenu>
-                );
-              }
-              return <Menu.Item key={item.key}>{item.label}</Menu.Item>;
-            })}
-          </Menu>
-        )}
+            <MenuOutlined style={{ fontSize: 20 }} />
+          </button>
+        </div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <img
-          src={nts}
-          alt="NTS"
-          className="cursor-pointer w-full max-w-[70px] aspect-square nts-logo"
-          onClick={() => window.open("https://www.nts.go.kr", "_blank")}
-          loading="lazy"
-        />
-        <img
-          src={mcst}
-          alt="MCST"
-          className="cursor-pointer w-full max-w-[90px] aspect-square nts-logo"
-          onClick={() => window.open("https://www.mcst.go.kr", "_blank")}
-          loading="lazy"
-        />
-        {isMobile && (
-          <>
-            <Button
-              type="text"
-              icon={<MenuOutlined style={{ color: "black", fontSize: 20 }} />}
-              onClick={() => setVisible(true)}
-            />
-            <Drawer
-              title="메뉴"
-              placement="right"
-              onClose={() => setVisible(false)}
-              open={visible}
-            >
-              <Menu
-                mode="inline"
-                selectedKeys={[location.pathname]}
-                style={{ borderInlineEnd: "none" }}
-                onClick={() => setVisible(false)}
-              >
-                {menuItems.map((item) => {
-                  if (item.children) {
-                    return (
-                      <Menu.SubMenu
-                        key={item.key}
-                        title={item.label}
-                        triggerSubMenuAction="click"
-                      >
-                        {item.children.map((sub) => (
-                          <Menu.Item key={sub.key}>{sub.label}</Menu.Item>
-                        ))}
-                      </Menu.SubMenu>
-                    );
-                  }
-                  return <Menu.Item key={item.key}>{item.label}</Menu.Item>;
-                })}
-              </Menu>
-            </Drawer>
-          </>
-        )}
-      </div>
-    </Header>
+      <Drawer
+        title={ORG.shortName}
+        placement="right"
+        open={open}
+        onClose={() => setOpen(false)}
+        width={300}
+        styles={{ body: { padding: "8px 0 24px" } }}
+      >
+        <nav aria-label="모바일 메뉴">
+          <ul>
+            {NAV.map((item) => (
+              <li key={item.key} className="border-b border-line-soft">
+                <Link
+                  to={item.to}
+                  className={`block px-6 py-3.5 text-base font-semibold ${
+                    active === item.key ? "text-primary" : "text-ink"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <ul className="pb-2">
+                    {item.children.map((child) => (
+                      <li key={child.to}>
+                        <Link
+                          to={child.to}
+                          aria-current={pathname === child.to ? "page" : undefined}
+                          className={`block px-6 py-2 pl-10 text-[15px] ${
+                            pathname === child.to
+                              ? "font-semibold text-primary"
+                              : "text-ink-muted"
+                          }`}
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+          <div className="px-6 pt-6">
+            <Link to={CONTACT_LINK.to} className="btn-primary w-full">
+              {CONTACT_LINK.label}
+            </Link>
+            <p className="mt-3 text-center text-sm text-ink-muted">
+              전화 {ORG.phone}
+            </p>
+          </div>
+        </nav>
+      </Drawer>
+    </header>
   );
 }

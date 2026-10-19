@@ -1,168 +1,71 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "antd";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import History from "./pages/about/History";
-import Business from "./pages/Business";
-import ProjectDetail from "./pages/ProjectDetail";
-import BusinessDetail from "./pages/BusinessDetail";
-import Resources from "./pages/Resources";
-import Notices from "./pages/Notices";
-import NoticeDetail from "./pages/NoticeDetail";
-import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import TopImages from "./components/TopImages";
-import Greeting from "./pages/about/Greeting";
-import Location from "./pages/about/Location";
 import ScrollToTop from "./components/ScrollToTop";
-import Organization from "./pages/about/Organization";
-import Introduce from "./pages/about/Introduce";
-import Projects from "./pages/Projects";
-import Terms from "./pages/Terms";
-import Privacy from "./pages/Privacy";
 import NotFound from "./components/NotFound";
+import Home from "./pages/Home";
+const Greeting = lazy(() => import("./pages/about/Greeting"));
+const Introduce = lazy(() => import("./pages/about/Introduce"));
+const Organization = lazy(() => import("./pages/about/Organization"));
+const History = lazy(() => import("./pages/about/History"));
+const Location = lazy(() => import("./pages/about/Location"));
+const Business = lazy(() => import("./pages/Business"));
+const BusinessDetail = lazy(() => import("./pages/BusinessDetail"));
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const Notices = lazy(() => import("./pages/Notices"));
+const NoticeDetail = lazy(() => import("./pages/NoticeDetail"));
+const Resources = lazy(() => import("./pages/Resources"));
+const Contact = lazy(() => import("./pages/Contact"));
+const ApplyPage = lazy(() => import("./pages/ApplyPage"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 
 const { Content } = Layout;
 
 export default function App() {
   return (
-    <Layout className="min-h-screen bg-white">
+    <Layout className="min-h-screen">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+      >
+        본문 바로가기
+      </a>
       <Navbar />
-      <Content style={{ paddingTop: 64 }}>
-        <div className="">
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/privacy" element={<Privacy />} />
+      {/* 고정 헤더 높이(64px)만큼 본문을 내린다 */}
+      <Content id="main" style={{ paddingTop: 64 }}>
+        <ScrollToTop />
+        <Suspense fallback={<div className="container-site py-24 text-center text-ink-muted">불러오는 중…</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-            <Route
-              path="/about"
-              element={
-                <TopImages>
-                  <About />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/about/history"
-              element={
-                <TopImages>
-                  <History />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/about/introduce"
-              element={
-                <TopImages>
-                  <Introduce />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/about/greeting"
-              element={
-                <TopImages>
-                  <Greeting />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/about/location"
-              element={
-                <TopImages>
-                  <Location />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/about/organization"
-              element={
-                <TopImages>
-                  <Organization />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/business"
-              element={
-                <TopImages>
-                  <Business />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/business/:id"
-              element={
-                <TopImages>
-                  <BusinessDetail />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/business"
-              element={
-                <TopImages>
-                  <Business />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/projects/:id"
-              element={
-                <TopImages>
-                  <ProjectDetail />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <TopImages>
-                  <Projects />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/resources"
-              element={
-                <TopImages>
-                  <Resources />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/notices"
-              element={
-                <TopImages>
-                  <Notices />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/notices/:id"
-              element={
-                <TopImages>
-                  <NoticeDetail />
-                </TopImages>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <TopImages>
-                  <Contact />
-                </TopImages>
-              }
-            />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+          <Route path="/about" element={<Navigate to="/about/greeting" replace />} />
+          <Route path="/about/greeting" element={<Greeting />} />
+          <Route path="/about/introduce" element={<Introduce />} />
+          <Route path="/about/organization" element={<Organization />} />
+          <Route path="/about/history" element={<History />} />
+          <Route path="/about/location" element={<Location />} />
+
+          <Route path="/business" element={<Business />} />
+          <Route path="/business/:id" element={<BusinessDetail />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/notices" element={<Notices />} />
+          <Route path="/notices/:id" element={<NoticeDetail />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/apply/:formId" element={<ApplyPage />} />
+
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        </Suspense>
       </Content>
-      <Footer style={{ textAlign: "center" }}>© 사단법인 무궁화예술단</Footer>
+      <Footer />
     </Layout>
   );
 }

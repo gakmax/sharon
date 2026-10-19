@@ -7,7 +7,7 @@ import image403 from "../assets/notice/40-3.jpg";
 import image411 from "../assets/notice/41-1.jpg";
 import image412 from "../assets/notice/41-2.jpg";
 
-import image421 from "../assets/notice/42-1.jpg";
+import image421 from "../assets/notice/42-1.webp";
 import image422 from "../assets/notice/42-2.jpg";
 import image423 from "../assets/notice/42-3.jpg";
 import image424 from "../assets/notice/42-4.jpg";
@@ -18,24 +18,26 @@ import image432 from "../assets/notice/43-2.jpg";
 import image441 from "../assets/notice/44-1.jpg";
 import image442 from "../assets/notice/44-2.jpg";
 
-import image451 from "../assets/notice/45-1.png";
-import image452 from "../assets/notice/45-2.png";
-import image453 from "../assets/notice/45-3.png";
+import image451 from "../assets/notice/45-1.webp";
+import image452 from "../assets/notice/45-2.webp";
+import image453 from "../assets/notice/45-3.webp";
 
-import image461 from "../assets/notice/46-1.jpg";
-import image462 from "../assets/notice/46-2.jpg";
+import image461 from "../assets/notice/46-1.webp";
+import image462 from "../assets/notice/46-2.webp";
 
 import image471 from "../assets/notice/47-1.jpg";
 import image472 from "../assets/notice/47-2.jpg";
 
-import image481 from "../assets/notice/48-1.jpg";
-import image482 from "../assets/notice/48-2.jpg";
+import image481 from "../assets/notice/48-1.webp";
+import image482 from "../assets/notice/48-2.webp";
 import image483 from "../assets/notice/48-3.jpg";
 
-import image111 from "../assets/notice/대상수상/1.jpg";
-import image112 from "../assets/notice/대상수상/2.jpg";
-import image113 from "../assets/notice/대상수상/3.jpg";
-import image114 from "../assets/notice/대상수상/4.jpg";
+import image111 from "../assets/notice/대상수상/1.webp";
+import image112 from "../assets/notice/대상수상/2.webp";
+import image113 from "../assets/notice/대상수상/3.webp";
+import image114 from "../assets/notice/대상수상/4.webp";
+
+import imageKdms1 from "../assets/notice/kdms-1.webp";
 
 import { BsFile } from "react-icons/bs";
 
@@ -44,6 +46,7 @@ export const notices = [
     id: "1",
     title: "제40회 전국무용예술제 안내",
     notice_date: "2018-01-28",
+    category: "행사",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -52,9 +55,9 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image403} className="mx-auto" loading="lazy" />
-        <img src={image401} className="mx-auto" loading="lazy" />
-        <img src={image402} className="mx-auto" loading="lazy" />
+        <img alt="제40회 전국무용예술제 안내 안내 이미지 1" src={image403} className="mx-auto" loading="lazy" />
+        <img alt="제40회 전국무용예술제 안내 안내 이미지 2" src={image401} className="mx-auto" loading="lazy" />
+        <img alt="제40회 전국무용예술제 안내 안내 이미지 3" src={image402} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -62,6 +65,7 @@ export const notices = [
     id: "2",
     title: "제41회 전국무용예술제 안내",
     notice_date: "2019-01-31",
+    category: "행사",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -70,8 +74,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image411} className="mx-auto" loading="lazy" />
-        <img src={image412} className="mx-auto" loading="lazy" />
+        <img alt="제41회 전국무용예술제 안내 안내 이미지 1" src={image411} className="mx-auto" loading="lazy" />
+        <img alt="제41회 전국무용예술제 안내 안내 이미지 2" src={image412} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -79,6 +83,7 @@ export const notices = [
     id: "3",
     title: "제42회 전국무용예술제 안내",
     notice_date: "2020-02-05",
+    category: "행사",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -87,10 +92,10 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image421} className="mx-auto" loading="lazy" />
-        <img src={image422} className="mx-auto" loading="lazy" />
-        <img src={image423} className="mx-auto" loading="lazy" />
-        <img src={image424} className="mx-auto" loading="lazy" />
+        <img alt="제42회 전국무용예술제 안내 안내 이미지 1" src={image421} className="mx-auto" loading="lazy" />
+        <img alt="제42회 전국무용예술제 안내 안내 이미지 2" src={image422} className="mx-auto" loading="lazy" />
+        <img alt="제42회 전국무용예술제 안내 안내 이미지 3" src={image423} className="mx-auto" loading="lazy" />
+        <img alt="제42회 전국무용예술제 안내 안내 이미지 4" src={image424} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -98,6 +103,7 @@ export const notices = [
     id: "4",
     title: "제43회 전국무용예술제 안내",
     notice_date: "2021-03-25",
+    category: "행사",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -106,8 +112,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image431} className="mx-auto" loading="lazy" />
-        <img src={image432} className="mx-auto" loading="lazy" />
+        <img alt="제43회 전국무용예술제 안내 안내 이미지 1" src={image431} className="mx-auto" loading="lazy" />
+        <img alt="제43회 전국무용예술제 안내 안내 이미지 2" src={image432} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -115,6 +121,7 @@ export const notices = [
     id: "5",
     title: "제44회 전국무용예술제 안내",
     notice_date: "2022-02-18",
+    category: "행사",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -123,8 +130,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image441} className="mx-auto" loading="lazy" />
-        <img src={image442} className="mx-auto" loading="lazy" />
+        <img alt="제44회 전국무용예술제 안내 안내 이미지 1" src={image441} className="mx-auto" loading="lazy" />
+        <img alt="제44회 전국무용예술제 안내 안내 이미지 2" src={image442} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -132,6 +139,7 @@ export const notices = [
     id: "6",
     title: "제45회 전국무용예술제 안내",
     notice_date: "2023-02-09",
+    category: "행사",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -140,9 +148,9 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image451} className="mx-auto" loading="lazy" />
-        <img src={image452} className="mx-auto" loading="lazy" />
-        <img src={image453} className="mx-auto" loading="lazy" />
+        <img alt="제45회 전국무용예술제 안내 안내 이미지 1" src={image451} className="mx-auto" loading="lazy" />
+        <img alt="제45회 전국무용예술제 안내 안내 이미지 2" src={image452} className="mx-auto" loading="lazy" />
+        <img alt="제45회 전국무용예술제 안내 안내 이미지 3" src={image453} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -150,6 +158,7 @@ export const notices = [
     id: "7",
     title: "제46회 전국무용예술제 안내",
     notice_date: "2024-02-31",
+    category: "행사",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -158,8 +167,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image461} className="mx-auto" loading="lazy" />
-        <img src={image462} className="mx-auto" loading="lazy" />
+        <img alt="제46회 전국무용예술제 안내 안내 이미지 1" src={image461} className="mx-auto" loading="lazy" />
+        <img alt="제46회 전국무용예술제 안내 안내 이미지 2" src={image462} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -167,6 +176,8 @@ export const notices = [
     id: "8",
     title: "제47회 전국무용예술제 안내",
     notice_date: "2025-03-03",
+    category: "행사",
+    relatedProgram: "/business/2025_2",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -175,8 +186,8 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image471} className="mx-auto" loading="lazy" />
-        <img src={image472} className="mx-auto" loading="lazy" />
+        <img alt="제47회 전국무용예술제 안내 안내 이미지 1" src={image471} className="mx-auto" loading="lazy" />
+        <img alt="제47회 전국무용예술제 안내 안내 이미지 2" src={image472} className="mx-auto" loading="lazy" />
       </>
     ),
   },
@@ -184,6 +195,7 @@ export const notices = [
     id: "9",
     title: "2024결산서, 2025예산서 및 기부금모금실적공개",
     notice_date: "2025-10-10",
+    category: "공시",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -222,6 +234,7 @@ export const notices = [
     title:
       "[수상 소식] 대한민국 예술인상 대상 (예술공헌부문) 수상의 영예를 안았습니다.",
     notice_date: "2026-03-18",
+    category: "소식",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -230,10 +243,10 @@ export const notices = [
     ),
     content: (
       <>
-        <img src={image111} className="mx-auto" loading="lazy" />
-        <img src={image114} className="mx-auto" loading="lazy" />
-        <img src={image112} className="mx-auto" loading="lazy" />
-        <img src={image113} className="mx-auto" loading="lazy" />
+        <img alt="[수상 소식] 대한민국 예술인상 대상 (예술공헌부문) 수상의 영예를 안았습니다. 안내 이미지 1" src={image111} className="mx-auto" loading="lazy" />
+        <img alt="[수상 소식] 대한민국 예술인상 대상 (예술공헌부문) 수상의 영예를 안았습니다. 안내 이미지 2" src={image114} className="mx-auto" loading="lazy" />
+        <img alt="[수상 소식] 대한민국 예술인상 대상 (예술공헌부문) 수상의 영예를 안았습니다. 안내 이미지 3" src={image112} className="mx-auto" loading="lazy" />
+        <img alt="[수상 소식] 대한민국 예술인상 대상 (예술공헌부문) 수상의 영예를 안았습니다. 안내 이미지 4" src={image113} className="mx-auto" loading="lazy" />
 
         <p>안녕하세요. 무궁화예술단입니다.</p>
 
@@ -266,6 +279,8 @@ export const notices = [
     id: "12",
     title: "제 48회 전국무용예술제 수상내역",
     notice_date: "2026-04-01",
+    category: "행사",
+    relatedProgram: "/business/2026_5",
     date: (
       <div className="flex border-b-[1px] mb-4 pb-4">
         <div className="text-gray-400 mr-1">관리자 | </div>
@@ -643,6 +658,388 @@ export const notices = [
           2026년 제48회 전국무용예술제 수상내역.pdf
         </a>
       </>
+    ),
+  },
+  {
+    id: "13",
+    title: "[모집] 한국춤 명상전문사(KDMS) 자격 과정 수강생 모집",
+    notice_date: "2026-10-13",
+    category: "모집",
+    status: "모집중",
+    note: "상시 모집 · 전화 신청",
+    date: (
+      <div className="flex border-b-[1px] mb-4 pb-4">
+        <div className="text-gray-400 mr-1">관리자 | </div>
+        <div className="text-gray-400">2026-10-13</div>
+      </div>
+    ),
+    content: (
+      <div className="space-y-8 leading-relaxed">
+        <div className="text-center space-y-2">
+          <h2 className="text-2xl font-bold">한국춤 명상전문사</h2>
+          <p className="text-gray-500">K-Dance Meditation Specialist (KDMS)</p>
+          <p className="text-gray-500">
+            민간자격 등록번호 제 2026-005504 호
+          </p>
+          <p className="mt-4">
+            내 몸을 움직이고 호흡하면서 마음을 쉬게 하는 시간
+          </p>
+          <p className="text-xl font-bold">자격 과정 수강생 모집</p>
+          <p className="mt-4 text-lg">
+            춤으로 몸을 깨우고
+            <br />
+            호흡으로 마음을 바라보다
+          </p>
+          <p className="text-gray-600">
+            한국 춤의 명상무를 기반으로 한
+            <br />
+            한국춤명상전문사 민간자격 교육과정
+          </p>
+        </div>
+
+        <section>
+          <h3 className="text-lg font-bold mb-2">● 자격정보</h3>
+          <table className="w-full border-collapse text-sm">
+            <tbody>
+              <tr>
+                <th className="border p-2 bg-gray-50 w-1/3">자격명</th>
+                <td className="border p-2">한국춤 명상 전문사</td>
+              </tr>
+              <tr>
+                <th className="border p-2 bg-gray-50">자격구분(민간자격)</th>
+                <td className="border p-2">한국직업능력연구원 등록 민간자격</td>
+              </tr>
+              <tr>
+                <th className="border p-2 bg-gray-50">등록번호</th>
+                <td className="border p-2">2026-005504</td>
+              </tr>
+              <tr>
+                <th className="border p-2 bg-gray-50">자격관리기관</th>
+                <td className="border p-2">
+                  사단법인 무궁화예술단
+                  <br />
+                  한국춤 명상 총연합회
+                  <br />
+                  주무관청: 문화체육관광부
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3 className="text-lg font-bold mb-2">● 문의</h3>
+          <p>한국춤 명상 총연합회 010-2523-0002</p>
+          <p>대표 김태연 010-3877-4351</p>
+          <p>홈페이지(사단법인 무궁화예술단)</p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">
+            ● 한국춤 명상 전문사(KDMS)란?
+          </h3>
+          <p className="font-semibold">춤과 명상이 만나는 새로운 전통예술교육</p>
+          <p className="text-gray-500">
+            A mindful movement practice rooted in Korean traditional dance
+          </p>
+          <p>한국춤을 기반으로 한 마음챙김 움직임 수련</p>
+          <p>K-댄스와 한국전통과 명상이 만나는 깊은 울림</p>
+          <p>
+            한국춤 명상 전문사는 한국춤의 靜中動(정중동) · 動中靜(동중정)
+            움직임과 호흡, 리듬과 여백, 그리고 정중동(靜中動)의 미학을 바탕으로
+            한국정신 문화와 한국춤, 명상을 함께 탐구, 지도하는 전문역량을
+            함양하는 교육과정.
+          </p>
+          <p>
+            춤을 통해 몸을 인식하고, (Move the Body)
+            <br />
+            호흡을 통해 마음을 가다듬으며 (Breathe the Mind)
+            <br />
+            움직임을 통해 본연의 자아를 느껴보는 시간 (Connect the Spirit)
+          </p>
+          <p>
+            한국춤 명상 전문사는 한국정신 문화와 한국춤의 아름다움과 명상의
+            가치를 현대적으로 연결.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 한국춤과 명상무</h3>
+          <p>
+            한국춤을 보여주는 것에서 → 한국춤으로 몸과 마음을 변화시키는
+            방법으로 세계에 전하는 것
+          </p>
+          <p>
+            힐링, 스트레스 완화, 마음의 안정(마음챙김), 자기돌봄, 집중, 몸의
+            감각
+          </p>
+          <p>
+            한국춤이 지닌 호흡과 여백, 곡선의 움직임, 장단의 흐름, 신체 중심의
+            이동과 정중동의 미학을 바탕으로 한국 정신문화와 음양의 조화로
+            명상적 움직임을 경험하고 미학적 탐구.
+          </p>
+          <p>
+            단순히 춤을 추는 것을 넘어, 몸의 감각을 깨우고 호흡과 움직임을
+            연결하며 자신의 내면에 집중하고 몸과 마음의 조화를 탐구하는 자연과
+            인간의 균형적 조화의 시간을 추구하는 한국춤 기반의 움직임·명상 교육.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 교육의 가치</h3>
+          <p className="font-semibold">한국춤 × 명상 × 한국전통문화</p>
+          <p>
+            한국춤의 기본을 기반으로 한 명상무 교육을 통해 전통예술의 새로운
+            활용 가능성을 모색.
+          </p>
+          <img
+            src={imageKdms1}
+            alt="한국춤 명상의 다섯 가지 순환 가치"
+            className="mx-auto max-w-md w-full"
+            loading="lazy"
+          />
+          <ul className="space-y-1">
+            <li>
+              <strong>TRADITION(전통)</strong> - 한국전통문화와 한국춤의 정신과
+              움직임을 이해하고 계승합니다.
+            </li>
+            <li>
+              <strong>BREATH(호흡)</strong> - 움직임과 호흡의 연결을
+              경험합니다.
+            </li>
+            <li>
+              <strong>MEDITATION(명상)</strong> - 움직임을 통한 마음의 집중으로
+              자신을 바라보고, 자연과 음양의 조화(balance), 나와 타인, 자연과
+              인간의 연결(connection)로 균형적 조화의 시간을 갖습니다.
+            </li>
+            <li>
+              <strong>EDUCATION(교육)</strong> - 전문적인 이론과 실기를 통해
+              교육역량을 키웁니다.
+            </li>
+            <li>
+              <strong>EXPANSION(확장)</strong> - 전통예술의 새로운 가능성을
+              만들어갑니다.
+            </li>
+          </ul>
+        </section>
+
+        <section className="space-y-4">
+          <h3 className="text-lg font-bold mb-2">● 교육과정</h3>
+          <p className="font-semibold">이론교육 + 실기집중교육</p>
+          <div>
+            <p className="font-semibold">STEP 01. 이론교육</p>
+            <p>
+              온라인 교육으로 한국춤 명상 전문사의 이론적 기반을 학습합니다.
+            </p>
+            <p>
+              한국춤의 이해, 명상의 이해, 한국춤 명상 프로그램론, 지도자 윤리 및
+              상담 등 과목 수강
+            </p>
+            <p>교육 형태: 온라인 영상 이론교육</p>
+          </div>
+          <div>
+            <p className="font-semibold">STEP 02. 실기 집중연수</p>
+            <p>
+              한국춤의 움직임과 호흡, 명상무의 실제 표현과 실기교육을 집중적으로
+              학습합니다.
+            </p>
+            <p>
+              교육생 간 실기 교류와 집중교육을 통해 한국춤 명상전문사로서 필요한
+              기본적인 실기역량을 함양합니다.
+            </p>
+          </div>
+          <div>
+            <p className="font-semibold">STEP 03. 자격시험</p>
+            <p>
+              교육과정을 이수한 응시자를 대상으로 정해진 절차에 따라 자격시험을
+              실시합니다.
+            </p>
+            <p>
+              필기 및 실기 평가의 세부 사항은 최종 교육과정 및 운영 규정에 따라
+              안내합니다.
+            </p>
+          </div>
+          <div>
+            <p className="font-semibold">
+              STEP 04. 실기시험 불합격 또는 실기 전 보충 수업 원할 시
+            </p>
+            <p>
+              해당 강의자에게 개인 교습 및 별도 교육 신청 가능 (비용 별도 발생,
+              선택사항)
+            </p>
+          </div>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 교육 커리큘럼</h3>
+          <p className="font-semibold">이론교육</p>
+          <ol className="list-decimal pl-6">
+            <li>한국춤의 이해</li>
+            <li>명상의 이해</li>
+            <li>한국춤명상 프로그램론</li>
+            <li>지도자 윤리 및 상담</li>
+          </ol>
+          <p className="font-semibold">실기교육</p>
+          <ol className="list-decimal pl-6">
+            <li>한국춤명상무 기본 실기 (한국춤 기본기 포함)</li>
+            <li>명상 지도 능력</li>
+            <li>
+              프로그램 구성 (약 40~50분)
+              <br />
+              고요무(묵언명상, 태아 명상) - 깨움무(향 명상, 음악 명상) -
+              정화무(비움털기) - 쉼무(한국춤 명상무용) - 여운무 - 회귀무
+            </li>
+            <li>지도 태도</li>
+          </ol>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 응시자격</h3>
+          <ol className="list-decimal pl-6">
+            <li>고등학교 졸업 이상</li>
+            <li>20세 이상</li>
+            <li>
+              사단법인 무궁화예술단에서 정한 한국춤 명상전문사 교육과정 이수자
+            </li>
+          </ol>
+          <p className="text-gray-500 text-sm">
+            (한국춤을 전공하지 않았더라도 교육과정의 취지와 요건에 부합하는
+            분들이 참여할 수 있도록 운영합니다.)
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 자격 취득 절차</h3>
+          <p>
+            교육 신청 (전화 신청) → 실기 집중연수 (8회, 10시~4시) → 온라인
+            교육과정 이수 (이론) → 이론 자격시험 응시 → 실기 평가 → 합격 →
+            전문사 자격증 취득
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 교육비 및 장소</h3>
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr>
+                <th className="border p-2 bg-gray-50">구분</th>
+                <th className="border p-2 bg-gray-50">금액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border p-2">교육비</td>
+                <td className="border p-2 text-right">6,000,000원</td>
+              </tr>
+              <tr>
+                <td className="border p-2">응시료</td>
+                <td className="border p-2 text-right">50,000원</td>
+              </tr>
+              <tr>
+                <td className="border p-2">자격증 발급비</td>
+                <td className="border p-2 text-right">100,000원</td>
+              </tr>
+              <tr>
+                <td className="border p-2 font-semibold">합계</td>
+                <td className="border p-2 text-right font-semibold">
+                  6,150,000원
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <ul className="list-disc pl-6">
+            <li>교재비 무료(자료 제공), 소정의 수강 선물 제공</li>
+            <li>국내 단체(10인 이상) 교육비 할인</li>
+            <li>해외 단체(10인 이상) 혜택 및 관광 제공</li>
+          </ul>
+          <p className="font-semibold mt-4">교육장소</p>
+          <ul className="list-disc pl-6">
+            <li>온라인 영상 이론교육 (홈페이지에서 교육 진행)</li>
+            <li>실기교육 - 서울, 대구 교육장 지정</li>
+            <li>2일(토요일, 일요일) 4회 예정 (총 8회 수업)</li>
+            <li>
+              타지역 수강생 숙박 지원 / 해외 단체 수강생 숙식 제공 및 일정 지원
+            </li>
+          </ul>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 이런 분께 권합니다</h3>
+          <p>
+            한국춤명상전문사 과정은 다음과 같은 분들에게 새로운 배움의 기회가 될
+            수 있습니다.
+          </p>
+          <ul className="list-disc pl-6">
+            <li>한국춤을 배우고 있는 분 (일반인)</li>
+            <li>무용 및 전통예술 관련 종사자 (전문인)</li>
+            <li>예술교육에 관심 있는 분</li>
+            <li>명상과 움직임에 관심 있는 분</li>
+            <li>전통문화교육 프로그램에 관심 있는 분</li>
+            <li>자신의 예술적 영역을 확장하고 싶은 분</li>
+            <li>춤과 명상을 접목한 교육을 연구하고 싶은 분</li>
+            <li>한국전통문화의 새로운 가능성을 탐구하고 싶은 분</li>
+          </ul>
+          <p className="text-sm">
+            * 본 자격증은 유효기간이 3년입니다. 3년마다 보수 교육(12시간 이상)
+            수료 후 갱신이 가능합니다.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h3 className="text-lg font-bold mb-2">● 한국춤 명상 전문사의 미래</h3>
+          <ul className="list-disc pl-6">
+            <li>한국 춤의 미래지향적 사업의 일환</li>
+            <li>공연예술의 영역을 넘어 다양한 분야로 확장</li>
+            <li>전통의 가치를 현대와 연결하여 새로운 문화교육의 가능성 모색</li>
+            <li>
+              향후 교육과정의 발전으로 활동 가능성 확대
+              <ul className="list-[circle] pl-6">
+                <li>문화예술 교육기관</li>
+                <li>평생교육원</li>
+                <li>문화센터</li>
+                <li>복지관</li>
+                <li>각종 문화프로그램 (노인, 장애인, 청소년 등)</li>
+                <li>지역 문화예술 정서적 치유 프로그램</li>
+                <li>명상, 움직임 기반 힐링 프로그램 운영</li>
+              </ul>
+            </li>
+          </ul>
+          <div className="text-sm text-gray-500 space-y-1">
+            <p>
+              ※ 구체적인 자격 활용 범위 및 활동 분야는 자격관리기관의 운영
+              규정에 따라 결정됩니다.
+            </p>
+            <p>
+              ※ 본 자격은 의료 행위, 심리상담, 임상 치료를 대체하거나 수행하지
+              않으며, 해당 행위와 관련된 법적 책임이나 권한을 부여하지 않습니다.
+            </p>
+            <p>
+              ※ 자격증을 획득한 회원들은 차후 한국에서의 국제공연 및 여러 가지
+              행사에 참여할 기회를 제공하며, 한국춤 명상 수업을 할 수 있는
+              특강의 기회를 제공합니다. (상담 후 결정)
+            </p>
+          </div>
+        </section>
+
+        <p className="text-center font-semibold">
+          사단법인 무궁화예술단
+          <br />
+          한국춤 명상 총연합회
+        </p>
+
+        <div>
+          <a
+            href="/한국춤 명상전문사  공지.hwp"
+            download
+            className="text-blue-500 underline"
+          >
+            한국춤 명상전문사 공지.hwp
+          </a>
+          <p className="mt-2 text-gray-500 text-sm">
+            ※ 첨부파일은 한글(.hwp) 문서 형식으로 제공됩니다.
+          </p>
+        </div>
+      </div>
     ),
   },
 ];

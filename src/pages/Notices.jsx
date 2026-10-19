@@ -1,53 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Table } from "antd";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import PageHeader from "../components/PageHeader";
+import NoticeList from "../components/NoticeList";
 import { notices } from "../data/noticedata";
-import group from "../assets/group.png";
-import { getNotices } from "../api";
 
+// 공지 데이터는 당분간 정적 파일(noticedata.jsx)이 단일 소스. 백엔드 전환 시 notices만 서버 데이터로 교체.
 export default function Notices() {
-  const navigate = useNavigate();
-  const reversedNotices = [...notices].reverse();
-  const [notice, setNotice] = useState([]);
-
-  useEffect(() => {
-    getNotices().then((data) => setNotice(data));
-  }, []);
-
-  const cols = [
-    {
-      title: "번호",
-      dataIndex: "id",
-      key: "id",
-      width: 60,
-      render: (id, record, index) => reversedNotices.length - index,
-    },
-    {
-      title: "제목",
-      dataIndex: "title",
-      key: "title",
-    },
-    {
-      title: "작성일",
-      dataIndex: "notice_date",
-      key: "notice_date",
-      width: 120,
-    },
-  ];
-
   return (
-    <div>
-      <h2 className="text-2xl font-bold">공지사항</h2>
-      <Table
-        dataSource={reversedNotices}
-        columns={cols}
-        rowKey="id"
-        pagination={false}
-        onRow={(record) => ({
-          onClick: () => navigate(`/notices/${record.id}`),
-          style: { cursor: "pointer" },
-        })}
+    <>
+      <PageHeader
+        title="공지사항"
+        description="모집, 행사 안내, 경영 공시를 알려드립니다."
+        breadcrumb={[{ label: "공지사항" }]}
       />
-    </div>
+      <div className="container-site py-10 md:py-14">
+        <NoticeList notices={notices} />
+      </div>
+    </>
   );
 }

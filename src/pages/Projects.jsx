@@ -1,56 +1,19 @@
 import React from "react";
-import { Card, Row, Col, Button } from "antd";
-import { business } from "../data/business";
-import { Link } from "react-router-dom";
+import PageHeader from "../components/PageHeader";
+import ProgramList from "../components/ProgramList";
 import { projects } from "../data/projects";
 
 export default function Projects() {
-  const programsByYear = projects.reduce((acc, program) => {
-    if (!acc[program.year]) acc[program.year] = [];
-    acc[program.year].push(program);
-    return acc;
-  }, {});
-
   return (
-    <div className=" ">
-      <h2 className="text-2xl font-bold ">교육 프로그램</h2>
-      {Object.keys(programsByYear)
-        .sort((a, b) => b - a)
-        .map((year) => (
-          <div key={year} className="space-y-6 mb-12">
-            <h3 className="text-2xl text-gray-400 border-b-2 border-grey-200 pb-2">
-              {year}년
-            </h3>
-
-            <Row gutter={[16, 16]}>
-              {programsByYear[year].map((p) => (
-                <Col xs={24} sm={12} md={8} key={p.id}>
-                  <Link to={"/projects/" + p.id}>
-                    <div className="relative rounded-sm overflow-hidden shadow-lg hover:shadow-slate-500 hover:-translate-y-1 transform transition-all duration-300">
-                      <img
-                        src={p.image}
-                        alt={p.title}
-                        className="w-full h-56 object-cover"
-                        loading="lazy"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                        <h4 className="text-white font-bold text-lg">
-                          {p.title}
-                        </h4>
-                        <p className="text-gray-200 text-sm mb-0">
-                          대상: {p.target}
-                        </p>
-                        <p className="text-gray-200 text-sm mb-0">
-                          기간: {p.duration}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                </Col>
-              ))}
-            </Row>
-          </div>
-        ))}
-    </div>
+    <>
+      <PageHeader
+        title="교육프로그램"
+        description="청소년·청년 대상 전통문화예술 교육과 한국춤 지도자 자격 과정입니다."
+        breadcrumb={[{ label: "교육프로그램" }]}
+      />
+      <div className="container-site py-10 md:py-14">
+        <ProgramList items={projects} basePath="/projects" kind="교육" />
+      </div>
+    </>
   );
 }

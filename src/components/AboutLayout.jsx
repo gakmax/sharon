@@ -1,48 +1,22 @@
 import React from "react";
-import { Layout, Menu } from "antd";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import PageHeader from "./PageHeader";
+import { ABOUT_TABS } from "../data/nav";
 
-const { Sider, Content } = Layout;
-
+// 소개 섹션 공용 레이아웃: 페이지 헤더 + 하위 탭 + 본문 컨테이너
 export default function AboutLayout({ children }) {
-  const location = useLocation();
+  const { pathname } = useLocation();
+  const current = ABOUT_TABS.find((t) => t.to === pathname) ?? ABOUT_TABS[0];
 
   return (
-    <Layout>
-      <Sider
-        width={200}
-        className="hidden md:block mr-6"
-        style={{ background: "#fff", borderRight: "1.5px solid #eee" }}
-      >
-        <Menu
-          mode="inline"
-          selectedKeys={[location.pathname]}
-          style={{ borderRight: 0 }}
-          items={[
-            {
-              key: "/about/greeting",
-              label: <Link to="/about/greeting">인사말</Link>,
-            },
-            {
-              key: "/about/introduce",
-              label: <Link to="/about/introduce">예술단 소개</Link>,
-            },
-            {
-              key: "/about/organization",
-              label: <Link to="/about/organization">조직도</Link>,
-            },
-            {
-              key: "/about/history",
-              label: <Link to="/about/history">연혁</Link>,
-            },
-            {
-              key: "/about/location",
-              label: <Link to="/about/location">오시는길</Link>,
-            },
-          ]}
-        />
-      </Sider>
-      <Content>{children}</Content>
-    </Layout>
+    <>
+      <PageHeader
+        title={current.label}
+        description={current.description}
+        breadcrumb={[{ label: "소개", to: ABOUT_TABS[0].to }, { label: current.label }]}
+        tabs={ABOUT_TABS}
+      />
+      <div className="container-site py-10 md:py-14">{children}</div>
+    </>
   );
 }
