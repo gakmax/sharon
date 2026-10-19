@@ -10,6 +10,7 @@ import Title from "antd/es/typography/Title";
 import slider1 from "../assets/carousel1.jpg";
 import slider2 from "../assets/carousel2.jpg";
 import slider3 from "../assets/carousel3.jpg";
+import NoticePopup from "../components/NoticePopup";
 
 export default function Home() {
   const [hovered, setHovered] = useState(null);
@@ -30,11 +31,11 @@ export default function Home() {
       link: "/business/2026_3",
     },
     {
-      id: 3,
-      title: "제 48회 전국무용예술제",
-      date: "2026-03-08",
-      status: "종료",
-      link: "/business/2026_5",
+      id: 13,
+      title: "한국춤 명상전문사(KDMS) 수강생 모집",
+      date: "2026-10-13",
+      status: "모집중",
+      link: "/notices/13",
     },
     {
       id: 4,
@@ -55,6 +56,12 @@ export default function Home() {
       return {
         text: "종료",
         colorClass: "text-gray-500",
+      };
+    }
+    if (status === "모집중") {
+      return {
+        text: "모집중",
+        colorClass: "text-blue-500",
       };
     }
     const today = new Date();
@@ -97,6 +104,7 @@ export default function Home() {
 
   return (
     <>
+      <NoticePopup />
       <div className="relative w-full overflow-hidden">
         <img
           src={mainImg}
