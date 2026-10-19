@@ -1026,4 +1026,43 @@ export const notices = [
       </div>
     ),
   },
+  {
+    id: "14",
+    title: "2025년 연간 기부금 모금액 및 활용실적 등 보고 공개 (공익법인 의무이행)",
+    notice_date: "2026-10-19",
+    date: (
+      <div className="flex border-b-[1px] mb-4 pb-4">
+        <div className="text-gray-400 mr-1">관리자 | </div>
+        <div className="text-gray-400">2026-10-19</div>
+      </div>
+    ),
+    content: (
+      <>
+        <p className="mb-4">
+          「법인세법 시행령」 제38조 제8항 및 제39조 제5항, 「상속세 및
+          증여세법」 제48조 제5항 및 제50조의3에 따라 2025년도 연간 기부금
+          모금액 및 활용실적, 공익법인 출연재산 등에 대한 보고서 및 결산서류
+          등을 다음과 같이 공개합니다.
+        </p>
+
+        <p className="mb-4">
+          본 자료는 투명한 재정 운영과 책임 있는 기부금 집행을 위해
+          작성되었으며, 세부 내용은 첨부파일을 통해 확인하실 수 있습니다.
+        </p>
+
+        <a
+          href="/2025연간기부금모금액및활용실적 등 보고(공익법인 의무이행, 출연재산보고서).pdf"
+          download
+          className="text-blue-500 underline"
+        >
+          2025연간기부금모금액및활용실적 등 보고(공익법인 의무이행,
+          출연재산보고서).pdf
+        </a>
+
+        <p className="mt-6 text-gray-500 text-sm">
+          ※ 첨부파일은 PDF 문서 형식으로 제공됩니다.
+        </p>
+      </>
+    ),
+  },
 ];
